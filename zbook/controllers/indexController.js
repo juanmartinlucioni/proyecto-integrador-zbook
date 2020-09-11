@@ -1,6 +1,6 @@
 const controller = {
     index: (req, res) => {
-        res.render('profile');
+        res.render('index', { title: 'Z-Book' });
     },
 }
 

@@ -1,6 +1,6 @@
 const controller = {
     index: (req, res) => {
-        res.render('register');
+        res.render("register", { title: "Register" });
     },
 }
 

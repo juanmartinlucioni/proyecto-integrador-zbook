@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+    <head>
+      <%- include('./partials/headlinks.ejs') %>
+    </head>
   <body>
+    <%- include('./partials/header') %>
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex">
@@ -281,5 +281,6 @@
             </div>
         </div>
     </main>
+    <%- include('./partials/footer') %>
   </body>
 </html>

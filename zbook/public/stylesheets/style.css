@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -12,4 +11,8 @@ a {
 }
 main{
     margin-bottom: 40px;
+}
+
+ul {
+  list-style-type: none;
 }

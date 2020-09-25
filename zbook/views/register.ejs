@@ -5,13 +5,24 @@
 </head> 
 <body>
     <%- include('./partials/header') %>
-    <main>
+    <main id="main-form">
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
                 <form action="">
-                    
-                    <h2>(Formulario de registración)</h2>
-            
+                    <h2>Registration</h2>
+                    <div class="form-information">
+                        <label><b>Username</b></label>    
+                        <input type="text" placeholder="Enter Username" id="reg-user" name="username">    
+                        <label><b>Email</b></label>    
+                        <input type="email" placeholder="Enter Email" id="reg-email" name="email">
+                        <label><b>Password</b></label>    
+                        <input type="password" placeholder="Enter Password" id="reg-psw" name="psw">
+                        <label><b>Confirm Password</b></label>    
+                        <input type="password" placeholder="Confirm Password" id="reg-pswconfirm" name="pswconfirm">
+                        <label><b>Birthday</b></label>    
+                        <input type="date" placeholder="Birthday" id="birthday" name="birthday">
+                        <button class="button" type="submit">Register</button>
+                    </div>
                 </form>
             </div>
         </div>

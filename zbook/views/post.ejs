@@ -6,12 +6,18 @@
     
 <body>
     <%- include('./partials/header') %>
-    <main>
+    <main id="main-form">
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex">
                 <form action="">
-                    <h2>(Formulario para agregar un post)</h2>
-
+                    <h2>Add Post</h2>
+                    <div class="form-information" id="post">
+                        <label><b>Caption</b></label>    
+                        <input type="text" placeholder="Add Caption" id="post-caption" name="caption">
+                        <label><b>Image Link</b></label>    
+                        <input type="text" placeholder="Enter url" id="post-url" name="url">
+                        <button class="button" type="submit">Post</button>
+                    </div>
                 </form>
 
             </div>

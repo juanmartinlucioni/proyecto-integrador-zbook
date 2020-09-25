@@ -1,4 +1,4 @@
-const usuarios = {
+const posts = {
     lista: [
         {
             idpost: 1,
@@ -350,9 +350,23 @@ const usuarios = {
             fechaCreacion: "2020-08-12",
             url: "https://images7.memedroid.com/images/UPLOADED442/5835e679769f5.jpeg "
         }
-    ]
+    ],
+    pullPost: function pullPost(id) {
+        let resultados = [];
+        for (let i = 0; i < posts.lista.length; i++) {
+            const element = posts.lista[i];
+            if (id == element.idusuarios) {
+                resultados.push(element)
+            }
+        }
+        if (resultados.length === 0) {
+            return "F"
+        } else {
+            return resultados
+        }
+    },
 };
 
 //export
 
-module.exports = usuarios;
+module.exports = posts;

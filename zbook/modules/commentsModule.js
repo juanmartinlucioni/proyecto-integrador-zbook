@@ -1,4 +1,4 @@
-const usuarios = {
+const comments = {
     lista: [
         {
             idcomments: 1,
@@ -1405,4 +1405,4 @@ const usuarios = {
 
 //export
 
-module.exports = usuarios;
+module.exports = comments;

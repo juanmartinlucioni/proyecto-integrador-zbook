@@ -1,4 +1,4 @@
-const usuarios = {
+const posts = {
     lista: [
         {
             idpost: 1,
@@ -355,4 +355,4 @@ const usuarios = {
 
 //export
 
-module.exports = usuarios;
+module.exports = posts;

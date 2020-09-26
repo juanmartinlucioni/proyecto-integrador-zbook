@@ -1400,7 +1400,21 @@ const comments = {
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         }
-    ]
+    ],
+    pullPostComments: function pullPostComments(id) {
+        let resultados = [];
+        for (let i = 0; i < comments.lista.length; i++) {
+            const element = comments.lista[i];
+            if (id == element.idpost) {
+                resultados.push(element)
+            }
+        }
+        if (resultados.length === 0) {
+            return "F"
+        } else {
+            return resultados
+        }
+    },
 };
 
 //export

@@ -5,7 +5,8 @@ const controller = {
         let idProfile = req.params.id;
         let detallesProfile = profile.pullUser(idProfile);
         let detallesPost = posts.pullPost(idProfile);
-        res.render("profile", { 
+        res.render("profile", {
+            title: "Profile", 
             details: detallesProfile,
             post: detallesPost,
         }); //eventualmente este title tiene que ser el nombre de la persona a quien pertenece el perfil

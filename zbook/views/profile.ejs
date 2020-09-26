@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
     <%- include('./partials/headlinks.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
 </head>
     
 <body>
     <%- include('./partials/header') %> 
     <main>
         <div class="uk-section uk-section-small">
-            <div class="uk-container uk-container-small">
+            <div class="uk-container uk-container-small profile-container">
                 <section class="info-usuario uk-flex uk-flex-around uk-width-1-1">
-                    <div class="uk-width-1-3 uk-flex uk-flex-center uk-flex-middle">
-                        <img src="<%= details[0].image  %>" alt="foto de perfil" class="foto-perfil">
+                    <div class="uk-width-1-3 uk-flex uk-flex-center uk-flex-middle profile-img-container">
+                        <img height="100px" width="100px" src="<%= details[0].image  %>" alt="foto de perfil" class="foto-perfil">
                     </div>
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
                         <div class="uk-flex uk-flex-middle">
                             <h3 class="uk-margin-remove"> <%= details[0].username  %>   </h3>
-                            <button class="uk-button uk-button-small uk-button-primary uk-margin-left">Seguir</button>
+                            <button class="uk-button uk-button-small uk-button-primary uk-margin-left follow-button">Seguir</button>
                         </div>
                         <div>
                             <ul class="red-usuario uk-flex uk-flex-between uk-width-1-2">
-                                <li>100 posts</li>
+                                <li>10 posts</li>
                                 <li>200 seguidores</li>
                                 <li>300 seguidos</li>
                             </ul>
@@ -32,10 +33,10 @@
                     <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
                         <% for (let i = 0; i < post.length; i++) { %>
                             <div
-                                class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                                <a href="" class="link-detalle">
+                                class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center post-min">
+                                <a href="/post/<%= post[i].idpost%>" class="link-detalle">
                                     <img src="<%= post[i].url %>" alt="foto de perfil" class="foto-perfil">
-                                    <p class="uk-text-center"><%= post[i].textoPost %></p>
+                                    <p class="uk-text-center post-desc"><%= post[i].textoPost %></p>
                                 </a>
                             </div>
                         <% } %>

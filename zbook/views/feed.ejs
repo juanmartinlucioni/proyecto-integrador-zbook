@@ -13,22 +13,22 @@
                 <section id="posts"
                     class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
 
-<!-- <% listaPosts.forEach(element => { %>
-<%    nombrePoster = [] %>
-<%    if (listaUsuarios.idusuarios == element.idusuarios) { %>
-<%      nombrePoster.push()   %>
-<%    } %>
-<% }); %>
-<%= nombrePoster %> -->
-
 <% listaPosts.forEach(element => { %>
-
+                    <%    idusuarioSearched = element.idusuarios %>
+                    <%    nombrePoster = [] %>
+                    <%    idPoster = [] %> 
+                    <%    listaUsuarios.forEach(element => { %>
+                    <%    if (element.idusuarios == idusuarioSearched) { %>
+                    <%      nombrePoster.push(element.username) %>
+                    <%      idPoster.push(idusuarioSearched) %>
+                    <%    } %>
+                    <% }); %>
                     <article class="post uk-card-default uk-flex uk-flex-column">
                         <div class="info-usuario uk-flex ">
                             <div>
                                 <img src="https://via.placeholder.com/40" alt="">
                             </div>
-                            <h4><a href="/profile/<%= element.idusuarios %>"><%= element.idusuarios %> </a></h4>
+                            <h4><a href="/profile/<%= element.idusuarios %>"><%= nombrePoster %></a></h4>
                         </div>
                         <div class="post-body uk-flex uk-flex-center">
                             <img src="<%= element.url %>" alt="">
@@ -41,20 +41,32 @@
                                 </li>
                             </ul>
                             <div class="post-pie uk-flex">
-                                <h5 class="uk-width-1-6"><%= element.idusuarios %></h5>
+                                <h5 class="uk-width-1-6"><a href="/profile/<%= element.idusuarios %>"><%= nombrePoster %> </a></h5>
                                 <p class="uk-width-5-6"><%= element.textoPost %> </p>
                             </div>
                         </div>
                         <div class="post-comentarios">
                             <h6>Comentarios</h6>
                             <ul>
-                                <% for (let i = 0; i < 4; i++) { %>
+                                
+                            <% for (let i = 0; i < listaComentarios.length; i++) { %>
+                                <% currentPost = element.idpost %> 
+                                <%    idusuarioSearched = listaComentarios[i].idusuarios %>
+                                <%    nombreCommenter = [] %>
+                                <%    listaUsuarios.forEach(element => { %>
+                                <%    if (element.idusuarios == idusuarioSearched) { %>
+                                <%      nombreCommenter.push(element.username) %>
+                                <%    } %>
+                                <% }); %>
+                                <%    if (element.idpost == listaComentarios[i].idpost) { %>
+                                <%      nombrePoster.push(element.username) %>
                                 <li>
-                                    <a href="/profile/<%= listaComentarios[i].idusuarios %>"> <%= listaComentarios[i].idusuarios %> </a>
+                                    <a href="/profile/<%= listaComentarios[i].idusuarios %>"> <%= nombreCommenter %> </a>
                                     <p><%= listaComentarios[i].texto %> </p>
-                                </li>    
+                                </li> 
+                                <%    } %>
                                 <% } %>
-                                <a href="/post/<%= element.idpost %> ">Ver más...</a>
+                                <a class="view-more" href="/post/<%= element.idpost %> ">Ver más...</a>
                             </ul>
                         </div>
                     </article>

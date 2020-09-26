@@ -1,5 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #191930;
 }
 
 a {
@@ -10,7 +11,7 @@ a {
     box-sizing: border-box;
 }
 main{
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 
 ul {

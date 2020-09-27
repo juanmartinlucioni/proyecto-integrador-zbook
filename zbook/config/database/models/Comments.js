@@ -3,7 +3,7 @@ const db = require('../config/database/database')
 
 module.exports = () => {
     const Comments = db.define("comments", {
-            idcomments: {
+            id: {
                 type: Sequelize.DataTypes.INTEGER,
                 primaryKey: true,
             },

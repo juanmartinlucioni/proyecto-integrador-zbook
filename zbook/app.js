@@ -35,6 +35,12 @@ app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/post', postRouter);
 
+// Sequelize
+const sequelize = new Sequelize('database', 'username', 'password', {
+   host: 'localhost',
+   dialect: 'mysql'
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

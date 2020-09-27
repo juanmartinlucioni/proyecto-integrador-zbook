@@ -3,7 +3,7 @@ const db = require('../database')
 
 module.exports = () => {
         const Posts = db.define("posts", {
-            idpost: {
+            id: {
                 type: Sequelize.DataTypes.INTEGER,
                 primaryKey: true
             },

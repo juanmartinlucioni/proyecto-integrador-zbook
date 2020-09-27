@@ -365,6 +365,20 @@ const posts = {
             return resultados
         }
     },
+    pullPostDetails: function pullPostDetails(id) {
+        let resultados = [];
+        for (let i = 0; i < posts.lista.length; i++) {
+            const element = posts.lista[i];
+            if (id == element.idpost) {
+                resultados.push(element)
+            }
+        }
+        if (resultados.length === 0) {
+            return "F"
+        } else {
+            return resultados
+        }
+    },
 };
 
 //export

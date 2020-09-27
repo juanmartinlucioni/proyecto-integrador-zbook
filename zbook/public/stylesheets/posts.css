@@ -18,6 +18,7 @@ article .info-usuario {
 
 .info-usuario a {
     color: white;
+    font-weight: bold;
 }
 
 .info-usuario div {
@@ -34,6 +35,7 @@ ul.post-icons {
     justify-content: space-between;
     padding: 15px 15%;
     border-bottom: 1px solid #1967A3;
+    border-top: 1px solid #1967A3;
     margin: 0px;
 }
 

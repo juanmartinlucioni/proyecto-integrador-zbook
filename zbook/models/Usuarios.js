@@ -1,12 +1,30 @@
 const { Sequelize } = require('sequelize');
-const Sequelize = require('sequelize');
-const db = require('../database')
+const db = require('../config/database/database')
 
-const usuarios = db.define("usuarios", {
-    title: {
-        type: Sequelize.STRING
+const Usuarios = db.define('usuarios', {
+        idusuarios: {
+            type: Sequelize.DataTypes.INTEGER,
+            primaryKey: true
+        },
+        username: {
+            type: Sequelize.DataTypes.STRING
+        },
+        password: {
+            type: Sequelize.DataTypes.STRING
+        },
+        email: {
+            type: Sequelize.DataTypes.STRING
+        },
+        age: {
+            type: Sequelize.DataTypes.INTEGER
+        },
+        birthday: {
+            type: Sequelize.DataTypes.DATE
+        },  // todas las variable que tiene el objeto usuarios en la db
+    },
+    {
+        timestamps: false,
     }
-    // todas las variable que tiene el objeto usuarios en la db
-})
+);
 
-module.exports = usuarios;
+module.exports = Usuarios;

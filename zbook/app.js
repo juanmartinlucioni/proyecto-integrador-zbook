@@ -4,11 +4,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var Sequelize = require('sequelize');
 
 // Routers
 var indexRouter = require('./routes/index');
 var feedRouter = require('./routes/feed');
-//var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/users');
 var profileRouter = require('./routes/profile');
 var registerRouter = require('./routes/register');
 var loginRouter = require('./routes/login');
@@ -29,17 +30,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Llamada a Rutas
 app.use('/', indexRouter);
 app.use('/feed', feedRouter);
-//app.use('/users', usersRouter);
+app.use('/users', usersRouter);
 app.use('/profile', profileRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/post', postRouter);
 
 // Sequelize
-const sequelize = new Sequelize('database', 'username', 'password', {
-   host: 'localhost',
-   dialect: 'mysql'
-});
+const db = require('./config/database/database')
+
+
+db.authenticate()
+  .then(() => console.log('Database connected...'))
+  .catch(err => console.log('Error: ' + err));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

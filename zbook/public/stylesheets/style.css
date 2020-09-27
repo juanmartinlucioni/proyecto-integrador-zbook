@@ -4,6 +4,14 @@ body {
   height: 100%;
 }
 
+a {
+  font-family: "Tahoma";
+}
+
+header * {
+  font-family: "Arial";
+}
+
 .full-body {
   height: 100%;
 }

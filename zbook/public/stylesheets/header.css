@@ -161,8 +161,6 @@ button:hover {
     position: fixed;
     bottom: 60px;
     right: 25px;
-    background-color: #0088a9;
-    border-radius: 50%;
     z-index: 150;
 }
 .add {

@@ -1,15 +1,12 @@
 const db = require('../config/database/database')
-const Usuarios = require('../models/Usuarios');
+const Usuarios = require('../config/database/models/Usuarios');
 
 const controller = {
     index: (req, res) => {
-    let users = Usuarios.findAll({
+    Usuarios.findAll({
         })
             .then((usuarios) => {
-                console.log(usuarios[0].username);
-            })
-            .then( () => {
-                res.render("feed", { title: "Z-Book", usuarios: users });
+                res.render("feed", { title: "Z-Book", usuarios: usuarios });
             })
         
             .catch(err => console.log(err))

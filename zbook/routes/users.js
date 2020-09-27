@@ -1,7 +1,8 @@
+// Ruta usada para probar Sequelize  y su comportamiento
 var express = require('express');
 var router = express.Router();
 const db = require('../config/database/database')
-const Usuarios = require('../models/Usuarios');
+const Usuarios = require('../config/database/models/Usuarios');
 // const usuarios = require('../modules/usersModule');
 
 /* GET users listing. */

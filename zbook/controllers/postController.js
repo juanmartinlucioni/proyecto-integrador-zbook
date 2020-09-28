@@ -11,12 +11,19 @@ let postController = {
         let idPost = req.params.id;
         let detallesPost = listaPosts.pullPostDetails(idPost);
         let commentsPost = listaComentarios.pullPostComments(idPost)
-        return res.render("postDetails", {
-            title: 'Post Details',
-            listaUsuarios: listaUsuarios.lista,
-            detallesPost: detallesPost,
-            commentsPost: commentsPost,
-        })
+        if (detallesPost == "F") {
+            return res.render("notFound", {
+                title: "Post Not Found",
+                notFound: "Post"                
+            })
+        } else {
+            return res.render("postDetails", {
+                title: 'Post Details',
+                listaUsuarios: listaUsuarios.lista,
+                detallesPost: detallesPost,
+                commentsPost: commentsPost,
+            })
+        }
     }
 };
 

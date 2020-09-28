@@ -83,3 +83,10 @@ input{
   cursor: pointer;
   transition: 0.5s;
 }
+
+.not-found {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

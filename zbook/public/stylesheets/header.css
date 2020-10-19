@@ -3,10 +3,7 @@
 /* FONTS */
 
 
-header{
-    height: 55px;
-    padding-top: 10px;
-}
+/* Defaults */
 header section{
     height: 100%;
 }
@@ -45,4 +42,130 @@ header div.uk-navbar-center ul li:nth-last-child(1){
 }
 header nav form input, header nav form ::placeholder, header nav form span{
     color: white !important;
+}
+
+/* Header */
+a,
+button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    height: 90px;
+    z-index: 150;
+    box-shadow: 1px 2px 15px rgba(97, 87, 236, 0.5);
+}
+/* Logo */
+.logo {
+    margin-right: auto;
+    margin-left: 50px;
+}
+
+.logo img {
+    width: 65px;
+}
+
+/* Search Bar */
+.searchbar-wrap #searchbar {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    transition: all 0.5s ease 0.2s;
+    border-radius: 10px;
+    padding-left: 5px;
+    margin-right: 5px;
+}
+
+.searchbar-wrap input {
+    margin-bottom: 0px;
+}
+
+#searchbar.expand {
+    opacity: 1;
+    width: 250px;
+    height: 25px;
+}
+
+.searchbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 151;
+}
+
+i.fa-search {
+    cursor: pointer;
+    margin-left: 5px;
+    transition: all 0.3s ease 0s;
+    color: white;
+}
+
+i.fa-search:hover {
+    color: #0088a9
+}
+
+/* List Menu */
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+
+}
+
+.nav_links li a:hover {
+    color: #0088a9
+}
+
+/* Login button */
+button {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+.login-button {
+    width: auto;
+}
+
+.content-wrap {
+    position: relative;
+    z-index: 1000;
+}
+.postAdd {
+    position: fixed;
+    bottom: 60px;
+    right: 25px;
+    z-index: 150;
+}
+.add {
+    padding: 20px;
+    color: #edf0f1;
+    font-size: xx-large;
+    font-weight: bolder;
 }

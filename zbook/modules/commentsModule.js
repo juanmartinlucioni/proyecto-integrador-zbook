@@ -1,1406 +1,1420 @@
 const comments = {
     lista: [
         {
-            idcomments: 1,
+            id: 1,
             idpost: 1,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 2,
+            id: 2,
             idpost: 1,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 3,
+            id: 3,
             idpost: 1,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 4,
+            id: 4,
             idpost: 1,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 5,
+            id: 5,
             idpost: 2,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 6,
+            id: 6,
             idpost: 2,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 7,
+            id: 7,
             idpost: 2,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 8,
+            id: 8,
             idpost: 2,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 9,
+            id: 9,
             idpost: 3,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 10,
+            id: 10,
             idpost: 3,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 11,
+            id: 11,
             idpost: 3,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 12,
+            id: 12,
             idpost: 3,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 13,
+            id: 13,
             idpost: 4,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 14,
+            id: 14,
             idpost: 4,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 15,
+            id: 15,
             idpost: 4,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 16,
+            id: 16,
             idpost: 4,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 17,
+            id: 17,
             idpost: 5,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 18,
+            id: 18,
             idpost: 5,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 19,
+            id: 19,
             idpost: 5,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 20,
+            id: 20,
             idpost: 5,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 21,
+            id: 21,
             idpost: 6,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 22,
+            id: 22,
             idpost: 6,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 23,
+            id: 23,
             idpost: 6,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 24,
+            id: 24,
             idpost: 6,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 25,
+            id: 25,
             idpost: 7,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 26,
+            id: 26,
             idpost: 7,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 27,
+            id: 27,
             idpost: 7,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 28,
+            id: 28,
             idpost: 7,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 29,
+            id: 29,
             idpost: 8,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 30,
+            id: 30,
             idpost: 8,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 31,
+            id: 31,
             idpost: 8,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 32,
+            id: 32,
             idpost: 8,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 33,
+            id: 33,
             idpost: 9,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 34,
+            id: 34,
             idpost: 9,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 35,
+            id: 35,
             idpost: 9,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 36,
+            id: 36,
             idpost: 9,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 37,
+            id: 37,
             idpost: 10,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 38,
+            id: 38,
             idpost: 10,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 39,
+            id: 39,
             idpost: 10,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 40,
+            id: 40,
             idpost: 10,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 41,
+            id: 41,
             idpost: 11,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 42,
+            id: 42,
             idpost: 11,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 43,
+            id: 43,
             idpost: 11,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 44,
+            id: 44,
             idpost: 11,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 45,
+            id: 45,
             idpost: 12,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 46,
+            id: 46,
             idpost: 12,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 47,
+            id: 47,
             idpost: 12,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 48,
+            id: 48,
             idpost: 12,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 49,
+            id: 49,
             idpost: 13,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 50,
+            id: 50,
             idpost: 13,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 51,
+            id: 51,
             idpost: 13,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 52,
+            id: 52,
             idpost: 13,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 53,
+            id: 53,
             idpost: 14,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 54,
+            id: 54,
             idpost: 14,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 55,
+            id: 55,
             idpost: 14,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 56,
+            id: 56,
             idpost: 14,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 57,
+            id: 57,
             idpost: 15,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 58,
+            id: 58,
             idpost: 15,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 59,
+            id: 59,
             idpost: 15,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 60,
+            id: 60,
             idpost: 15,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 61,
+            id: 61,
             idpost: 16,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 62,
+            id: 62,
             idpost: 16,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 63,
+            id: 63,
             idpost: 16,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 64,
+            id: 64,
             idpost: 16,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 65,
+            id: 65,
             idpost: 17,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 66,
+            id: 66,
             idpost: 17,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 67,
+            id: 67,
             idpost: 17,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 68,
+            id: 68,
             idpost: 17,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 69,
+            id: 69,
             idpost: 18,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 70,
+            id: 70,
             idpost: 18,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 71,
+            id: 71,
             idpost: 18,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 72,
+            id: 72,
             idpost: 18,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 73,
+            id: 73,
             idpost: 19,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 74,
+            id: 74,
             idpost: 19,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 75,
+            id: 75,
             idpost: 19,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 76,
+            id: 76,
             idpost: 19,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 77,
+            id: 77,
             idpost: 20,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 78,
+            id: 78,
             idpost: 20,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 79,
+            id: 79,
             idpost: 20,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 80,
+            id: 80,
             idpost: 20,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 81,
+            id: 81,
             idpost: 21,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 82,
+            id: 82,
             idpost: 21,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 83,
+            id: 83,
             idpost: 21,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 84,
+            id: 84,
             idpost: 21,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 85,
+            id: 85,
             idpost: 22,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 86,
+            id: 86,
             idpost: 22,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 87,
+            id: 87,
             idpost: 22,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 88,
+            id: 88,
             idpost: 22,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 89,
+            id: 89,
             idpost: 23,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 90,
+            id: 90,
             idpost: 23,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 91,
+            id: 91,
             idpost: 23,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 92,
+            id: 92,
             idpost: 23,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 93,
+            id: 93,
             idpost: 24,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 94,
+            id: 94,
             idpost: 24,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 95,
+            id: 95,
             idpost: 24,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 96,
+            id: 96,
             idpost: 24,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 97,
+            id: 97,
             idpost: 25,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 98,
+            id: 98,
             idpost: 25,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 99,
+            id: 99,
             idpost: 25,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 100,
+            id: 100,
             idpost: 25,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 101,
+            id: 101,
             idpost: 26,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 102,
+            id: 102,
             idpost: 26,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 103,
+            id: 103,
             idpost: 26,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 104,
+            id: 104,
             idpost: 26,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 105,
+            id: 105,
             idpost: 27,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 106,
+            id: 106,
             idpost: 27,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 107,
+            id: 107,
             idpost: 27,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 108,
+            id: 108,
             idpost: 27,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 109,
+            id: 109,
             idpost: 28,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 110,
+            id: 110,
             idpost: 28,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 111,
+            id: 111,
             idpost: 28,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 112,
+            id: 112,
             idpost: 28,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 113,
+            id: 113,
             idpost: 29,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 114,
+            id: 114,
             idpost: 29,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 115,
+            id: 115,
             idpost: 29,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 116,
+            id: 116,
             idpost: 29,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 117,
+            id: 117,
             idpost: 30,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 118,
+            id: 118,
             idpost: 30,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 119,
+            id: 119,
             idpost: 30,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 120,
+            id: 120,
             idpost: 30,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 121,
+            id: 121,
             idpost: 31,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 122,
+            id: 122,
             idpost: 31,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 123,
+            id: 123,
             idpost: 31,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 124,
+            id: 124,
             idpost: 31,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 125,
+            id: 125,
             idpost: 32,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 126,
+            id: 126,
             idpost: 32,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 127,
+            id: 127,
             idpost: 32,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 128,
+            id: 128,
             idpost: 32,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 129,
+            id: 129,
             idpost: 33,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 130,
+            id: 130,
             idpost: 33,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 131,
+            id: 131,
             idpost: 33,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 132,
+            id: 132,
             idpost: 33,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 133,
+            id: 133,
             idpost: 34,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 134,
+            id: 134,
             idpost: 34,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 135,
+            id: 135,
             idpost: 34,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 136,
+            id: 136,
             idpost: 34,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 137,
+            id: 137,
             idpost: 35,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 138,
+            id: 138,
             idpost: 35,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 139,
+            id: 139,
             idpost: 35,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 140,
+            id: 140,
             idpost: 35,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 141,
+            id: 141,
             idpost: 36,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 142,
+            id: 142,
             idpost: 36,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 143,
+            id: 143,
             idpost: 36,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 144,
+            id: 144,
             idpost: 36,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 145,
+            id: 145,
             idpost: 37,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 146,
+            id: 146,
             idpost: 37,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 147,
+            id: 147,
             idpost: 37,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 148,
+            id: 148,
             idpost: 37,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 149,
+            id: 149,
             idpost: 38,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 150,
+            id: 150,
             idpost: 38,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 151,
+            id: 151,
             idpost: 38,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 152,
+            id: 152,
             idpost: 38,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 153,
+            id: 153,
             idpost: 39,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 154,
+            id: 154,
             idpost: 39,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 155,
+            id: 155,
             idpost: 39,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 156,
+            id: 156,
             idpost: 39,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 157,
+            id: 157,
             idpost: 40,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 158,
+            id: 158,
             idpost: 40,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 159,
+            id: 159,
             idpost: 40,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 160,
+            id: 160,
             idpost: 40,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 161,
+            id: 161,
             idpost: 41,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 162,
+            id: 162,
             idpost: 41,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 163,
+            id: 163,
             idpost: 41,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 164,
+            id: 164,
             idpost: 41,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 165,
+            id: 165,
             idpost: 42,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 166,
+            id: 166,
             idpost: 42,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 167,
+            id: 167,
             idpost: 42,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 168,
+            id: 168,
             idpost: 42,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 169,
+            id: 169,
             idpost: 43,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 170,
+            id: 170,
             idpost: 43,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 171,
+            id: 171,
             idpost: 43,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 172,
+            id: 172,
             idpost: 43,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 173,
+            id: 173,
             idpost: 44,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 174,
+            id: 174,
             idpost: 44,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 175,
+            id: 175,
             idpost: 44,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 176,
+            id: 176,
             idpost: 44,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 177,
+            id: 177,
             idpost: 45,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 178,
+            id: 178,
             idpost: 45,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 179,
+            id: 179,
             idpost: 45,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 180,
+            id: 180,
             idpost: 45,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 181,
+            id: 181,
             idpost: 46,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 182,
+            id: 182,
             idpost: 46,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 183,
+            id: 183,
             idpost: 46,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 184,
+            id: 184,
             idpost: 46,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 185,
+            id: 185,
             idpost: 47,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 186,
+            id: 186,
             idpost: 47,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 187,
+            id: 187,
             idpost: 47,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 188,
+            id: 188,
             idpost: 47,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 189,
+            id: 189,
             idpost: 48,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 190,
+            id: 190,
             idpost: 48,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 191,
+            id: 191,
             idpost: 48,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 192,
+            id: 192,
             idpost: 48,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 193,
+            id: 193,
             idpost: 49,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 194,
+            id: 194,
             idpost: 49,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 195,
+            id: 195,
             idpost: 49,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 196,
+            id: 196,
             idpost: 49,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 197,
+            id: 197,
             idpost: 50,
-            idusuarios: 3,
+            idusuario: 3,
             texto: "JAJAJ BUERNARDO BROTHERRRRR",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 198,
+            id: 198,
             idpost: 50,
-            idusuarios: 5,
+            idusuario: 5,
             texto: "puede ser pa? se lleno la vecindad brother",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 199,
+            id: 199,
             idpost: 50,
-            idusuarios: 2,
+            idusuario: 2,
             texto: "picantovich esas llantas padre",
             fechaCreacion: "2020-09-25"
         },
         {
-            idcomments: 200,
+            id: 200,
             idpost: 50,
-            idusuarios: 4,
+            idusuario: 4,
             texto: "cuidado con la luz fantasma",
             fechaCreacion: "2020-09-25"
         }
-    ]
+    ],
+    pullPostComments: function pullPostComments(id) {
+        let resultados = [];
+        for (let i = 0; i < comments.lista.length; i++) {
+            const element = comments.lista[i];
+            if (id == element.idpost) {
+                resultados.push(element)
+            }
+        }
+        if (resultados.length === 0) {
+            return "F"
+        } else {
+            return resultados
+        }
+    },
 };
 
 //export

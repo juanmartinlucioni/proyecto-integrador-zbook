@@ -3,10 +3,7 @@
 /* FONTS */
 
 
-header{
-    height: 55px;
-    padding-top: 10px;
-}
+/* Defaults */
 header section{
     height: 100%;
 }
@@ -48,7 +45,6 @@ header nav form input, header nav form ::placeholder, header nav form span{
 }
 
 /* Header */
-li,
 a,
 button {
     font-family: "Montserrat", sans-serif;
@@ -90,6 +86,10 @@ header {
     margin-right: 5px;
 }
 
+.searchbar-wrap input {
+    margin-bottom: 0px;
+}
+
 #searchbar.expand {
     opacity: 1;
     width: 250px;
@@ -107,6 +107,7 @@ i.fa-search {
     cursor: pointer;
     margin-left: 5px;
     transition: all 0.3s ease 0s;
+    color: white;
 }
 
 i.fa-search:hover {
@@ -160,8 +161,6 @@ button:hover {
     position: fixed;
     bottom: 60px;
     right: 25px;
-    background-color: #0088a9;
-    border-radius: 50%;
     z-index: 150;
 }
 .add {

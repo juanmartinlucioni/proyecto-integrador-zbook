@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" class="full-body">
+<html lang="en" class="">
 <head>
     <%- include('./partials/headlinks.ejs') %>
+    <script src="/javascripts/formscheck.js"></script>
 </head> 
 <body>
     <%- include('./partials/headernouser') %>
@@ -9,7 +10,7 @@
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
                 <h2>Registration</h2>
-                <form action="/login">
+                <form class="register-form" action="/register" method="POST" name="reg-form">
                     <div class="form-information">
                         <label for="reg-user"><b>Username</b></label>    
                         <input type="text" placeholder="Enter Username" id="reg-user" name="username">    

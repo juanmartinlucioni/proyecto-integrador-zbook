@@ -3,6 +3,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var logger = require('morgan');
 var Sequelize = require('sequelize');
 
@@ -25,8 +26,22 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session(
+  { secret: 'copapistao',
+    resave: false,
+    saveUninitialized: true,
+  }
+));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Modificar todas las vistas
+app.use(function(req,res,next){
+  if(req.session.user != undefined){
+    // locals nos deja disponibles datos en todas las vistas.
+    res.locals.user = req.session.user
+  }
+  return next();
+})
 // Llamada a Rutas
 app.use('/', indexRouter);
 app.use('/feed', feedRouter);

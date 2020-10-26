@@ -1,5 +1,23 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
+  background-color: #191930;
+  height: 100%;
+}
+
+a {
+  font-family: "Tahoma";
+}
+
+header * {
+  font-family: "Arial";
+}
+
+.full-body {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
 }
 
 a {
@@ -10,11 +28,15 @@ a {
     box-sizing: border-box;
 }
 main{
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 
 ul {
   list-style-type: none;
+}
+
+h1, h2, label {
+  color: white !important;
 }
 
 .form-information{
@@ -23,13 +45,12 @@ ul {
   font-size: 18px;
   flex-direction: column;
   align-items: center;
-  margin: 30% auto 50%auto;
+  margin: 10px auto 10px auto;
   border: 1px solid black;
-  width: 120%;
   border-radius: 15px;
-  padding: 25px;
+  padding: 25px 50px 25px 50px;
   align-items: center;
-  border-color: cornflowerblue;
+  border-color: rgb(97, 87, 236);
   border-width: 5px;
 }
 label{
@@ -51,15 +72,21 @@ input{
 }
 
 .button{
-  background-color: cornflowerblue;
+  background-color: rgba(0, 136, 169, 1);
   color: aliceblue;
   border-radius: 15px;
-  text-transform: uppercase;
   padding: 15px;
 }
 
 .button:hover{
-  background-color: #00B7FF;
+  background-color: rgba(0, 136, 169, 0.8);
   cursor: pointer;
   transition: 0.5s;
+}
+
+.not-found {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

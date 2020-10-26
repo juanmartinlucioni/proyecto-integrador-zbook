@@ -13,6 +13,10 @@ main {
     margin: 0;
 }
 
+h1 {
+    color: white;
+}
+
 h2 {
     margin-top: 20px;
     margin-bottom: 0;
@@ -27,7 +31,7 @@ h2 {
 }
 
 .titles-wrapper-home {
-    background-color: darkslateblue;
+    background-color: #191930;
     min-height: 100%;
     display: flex;
     flex: 75%;
@@ -38,7 +42,7 @@ h2 {
 }
 
 .buttons-wrapper-home {
-    background-color: deepskyblue;
+    background-color: black;
     height: 100%;
     display: flex;
     flex: 25%;
@@ -62,14 +66,14 @@ h2 {
 }
 
 .buttons-wrapper-home a {
-    color: black;
-    border: black 1px solid;
+    color: white;
+    border: white 1px solid;
     border-radius: 10%;
     padding: 10px;
 }
 
 .buttons-wrapper-home a:hover {
-    background-color: teal;
+    background-color: #191930;
     color: white;
     text-decoration: none;
 }

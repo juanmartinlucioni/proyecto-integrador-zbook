@@ -1,28 +1,26 @@
-<header class="uk-background-primary">
-    <section class=" uk-container uk-container-large">
-        <div class="">
-            <nav class="" uk-navbar>
-                <div class="uk-navbar-left">
-                    <h2 class="logo"><a href="/feed">Z-Book</a></h2>
-                </div>
-                <div class="uk-navbar-center">
-                    <ul class="uk-flex uk-flex-between uk-flex-middle">
-                        <li><a href="/feed">Home</a></li>
-                        <li><a href="/post">Post</a></li>
-                        <li><a href="/profile">Profile</a></li>
-                    </ul>
-                </div>
-                <div class="uk-navbar-right">
-                    <ul class="uk-flex uk-flex-between uk-flex-middle">
-                        <li>
-                            <form action="" class="uk-search uk-search-default">
-                                <span uk-search-icon></span>
-                                <input type="search" class="uk-search-input" placeholder="Buscar...">
-                            </form>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </section>
+<header class="header">
+             <a class='logo' href='/feed'>
+                 <img src='/images/logo1.png' alt="">
+             </a>
+             <div class='searchbox'>
+                 <div class='searchbar-wrap'>
+                     <form name='search-form' action='' method='get' id='search-form'>
+                         <input type='text' name='search' value='' class='searchbar' id='searchbar'>
+                     </form>
+                 </div>
+                 <label for='searchbar'><i class='fas fa-search' id='search-trigger'></i></label>
+             </div>
+             <nav>
+                 <ul class='nav_links'>
+                     <li><a href='/feed'>Home</a></li>
+                     <li><a href=''>Explore</a></li>
+                 </ul>
+             </nav>
+             <a class='CTA' href='/profile/1'>
+                 <button type='button' id='nav-button' class='login-button'>Profile</button>
+             </a>
+           
 </header>
+  <div class="postAdd">
+      <a class="add" href="/post"><img src="/images/createbuttonsm.png" alt="Create a Post"></a>
+  </div>

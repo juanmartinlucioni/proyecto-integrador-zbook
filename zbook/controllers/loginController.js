@@ -11,17 +11,38 @@ let loginController = {
             username: formData.username,
             password: userPassword,
         }
-        db.findAll({
-        where: [
-            { username: user.username }
-        ]
+        console.log(user.password);
+        db.findOne({
+        where:  [{username: user.username}]
         })
-        .then((resultados)=>{
-          if (resultados.length > 0){
-            console.log("estas logea3 papaaa");
+        .then((usuarioEncontrado)=>{
+          if (usuarioEncontrado != null){
+            if (bcrypt.compareSync(user.password, usuarioEncontrado.password)){
+              console.log("bienvenido maquina!");
+              req.session.user= usuarioEncontrado;
+            }
+            else {
+              console.log("alguien se olvido la contrasena");
+            }
           }
-          else{
-            console.log("quien te conoce?, registrate logi");
+          else {
+            db.findOne({
+              where: [{email:user.username}]
+            })
+            .then((mailEncontrado)=>{
+              if (mailEncontrado != null){
+                  if (bcrypt.compareSync(user.password, mailEncontrado.password)){
+                    console.log("que loco pa, te conectaste con el mail");
+                    req.session.user= mailEncontrado;
+                  }
+                  else {
+                    console.log("alguien se olvido la contrasena");
+                  }
+               }
+              else {
+                console.log('estas en el barrio equivocado, registrate ameo');
+              }
+            })
           }
         })
     }

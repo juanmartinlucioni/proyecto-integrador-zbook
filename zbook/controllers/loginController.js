@@ -6,14 +6,19 @@ let loginController = {
   },
   log: (req, res) => {
         let formData = req.body
-        let userPassword = bcrypt.hashSync(req.body.psw, 10)
+        // let userPassword = bcrypt.hashSync(req.body.psw, 10)
         user = {
             username: formData.username,
-            password: userPassword,
+            // password: userPassword,
+            password: formData.psw,
         }
+        console.log(user.password);
         db.findAll({
         where: [
-            { username: user.username }
+            { 
+              username: user.username,
+              password: user.password 
+            }
         ]
         })
         .then((resultados)=>{
@@ -21,7 +26,15 @@ let loginController = {
             console.log("estas logea3 papaaa");
           }
           else{
-            console.log("quien te conoce?, registrate logi");
+            db.findOne({
+              where: [{email:user.username}]
+            })
+            .then(function(users){
+              if (users.password = user.password){
+                console.log("que loco pa, te conectaste con el mail");
+                req.session.user=users;
+              }
+            })
           }
         })
     }

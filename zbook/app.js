@@ -42,6 +42,16 @@ app.use(function(req,res,next){
   }
   return next();
 })
+app.use(function(req,res,next){
+  if(req.cookies.userId != undefined && req.session.user == undefined){
+    db.User.findByPK(req.cookies.userId)
+    .then(function(user){
+      req.session.user = user;
+      return next();
+    })
+    .catch(e=> console.log(e))
+  }
+})
 // Llamada a Rutas
 app.use('/', indexRouter);
 app.use('/feed', feedRouter);

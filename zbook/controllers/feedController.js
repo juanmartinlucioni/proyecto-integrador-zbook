@@ -10,7 +10,7 @@ const controller = {
     Usuarios.findAll({
         })
             .then((usuarios) => {
-                res.render("feed", {
+                return res.render("feed", {
                   title: "Z-Book",
                   usuarios: usuarios,
                   listaUsuarios: listaUsuarios.lista,

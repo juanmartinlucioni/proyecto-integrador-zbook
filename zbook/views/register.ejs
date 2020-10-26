@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" class="full-body">
+<html lang="en" class="">
 <head>
     <%- include('./partials/headlinks.ejs') %>
+    <!-- <script src="/javascripts/formscheck.js"></script> -->
 </head> 
 <body>
     <%- include('./partials/headernouser') %>
@@ -9,18 +10,26 @@
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center uk-flex-column">
                 <h2>Registration</h2>
-                <form action="/login">
+                <form class="register-form" action="/register" method="POST" name="reg-form">
                     <div class="form-information">
                         <label for="reg-user"><b>Username</b></label>    
-                        <input type="text" placeholder="Enter Username" id="reg-user" name="username">    
+                        <input type="text" placeholder="Enter Username" id="reg-user" name="username" required>    
                         <label for="reg-email"><b>Email</b></label>    
-                        <input type="email" placeholder="Enter Email" id="reg-email" name="email">
+                        <input type="email" placeholder="Enter Email" id="reg-email" name="email" required>
                         <label for="reg-psw"><b>Password</b></label>    
-                        <input type="password" placeholder="Enter Password" id="reg-psw" name="psw">
+                        <input type="password" placeholder="Enter Password" id="reg-psw" name="psw" required>
                         <label for="reg-pswconfirm"><b>Confirm Password</b></label>    
-                        <input type="password" placeholder="Confirm Password" id="reg-pswconfirm" name="pswconfirm">
+                        <input type="password" placeholder="Confirm Password" id="reg-pswconfirm" name="pswconfirm" required>
                         <label for="reg-birthday"><b>Birthday</b></label>    
-                        <input type="date" placeholder="Birthday" id="reg-birthday" name="birthday" class="full-width">
+                        <input type="date" placeholder="Birthday" id="reg-birthday" name="birthday" class="full-width" required>
+                        <label for="reg-question"><b>Security Question</b></label>
+                        <select name="question" id="reg-question" class="full-width">
+                            <option value="1">Name of your first pet</option>
+                            <option value="2">Name of your first teacher</option>
+                            <option value="3">Name of your childhood best friend</option>
+                        </select>
+                        <label for="reg-answer"><b>Answer</b></label>
+                        <input type="text" placeholder="Answer" id="reg-answer" name="answer" class="full-width" required>
                         <button class="button full-width" type="submit">Register</button>
                     </div>
                 </form>

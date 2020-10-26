@@ -4,6 +4,7 @@ var router = express.Router();
 const db = require('../config/database/database')
 const Usuarios = require('../config/database/models/Usuarios');
 // const usuarios = require('../modules/usersModule');
+var usersController = require('../controllers/usersController')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -14,5 +15,7 @@ router.get('/', function(req, res, next) {
     .catch(err => console.log(err))
   res.send(usuarios[0]);
 });
+
+router.post('/logout',usersController.logout)
 
 module.exports = router;

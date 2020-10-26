@@ -2,7 +2,7 @@ let profile = require("../modules/usersModule");
 let posts = require("../modules/postsModule");
 const controller = {
     index: (req, res) => {
-        res.render('notFound', {
+        return res.render('notFound', {
             title: "Profile not found",
             notFound: "Profile"
         }); // Eventualmente esto va a redirigir al perfil del usuario loggeado
@@ -12,12 +12,12 @@ const controller = {
         let detallesProfile = profile.pullUser(idProfile);
         let detallesPost = posts.pullPost(idProfile);
         if (detallesProfile == "F") {
-            res.render('notFound', {
+            return res.render('notFound', {
                 title: "Profile Not Found",
                 notFound: "Profile"
             });            
         } else {
-            res.render("profile", {
+            return res.render("profile", {
                 title: "Profile",
                 details: detallesProfile,
                 post: detallesPost,

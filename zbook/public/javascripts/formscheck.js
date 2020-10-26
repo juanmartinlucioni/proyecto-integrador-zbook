@@ -28,7 +28,7 @@ window.addEventListener("load", function () {
         else if (validateEmail(nuevoEmail) == false) {
 
         }
-        else if (regPassword == "") {
+        else if ((regPassword.length < 6)) {
             UIkit.notification({
               message: "<span uk-icon='warning'></span> Password must be at least 6 characters",
               status: 'danger',
@@ -96,31 +96,6 @@ window.addEventListener("load", function () {
         password_confirm.style.border = "2px solid red"
         password_confirm.focus();
     }
-    }
-    //validacion edad
-    age.onchange = function () {
-        if (age.value == "") {
-              UIkit.notification({
-                message: "<span uk-icon='warning'></span> Age cannot be empty",
-                status: 'danger',
-                pos: 'bottom-left',
-                timeout: 5000
-              });
-              age.style.border = "2px solid red"
-              age.focus();
-        } 
-        else if (age.value < 13) {
-              UIkit.notification({
-                message: "<span uk-icon='warning'></span> You must be at least 13 years old to register",
-                status: 'danger',
-                pos: 'bottom-left',
-                timeout: 5000
-              });
-              age.style.border = "2px solid red"
-              age.focus();
-        } else {
-            age.style.border = "2px solid #65FF00";
-        }
     }
 
     // validacion de email

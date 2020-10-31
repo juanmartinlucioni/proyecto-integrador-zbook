@@ -15,6 +15,7 @@ var profileRouter = require('./routes/profile');
 var registerRouter = require('./routes/register');
 var loginRouter = require('./routes/login');
 var postRouter = require('./routes/post');
+var searchRouter = require('./routes/search')
 
 var app = express();
 
@@ -50,6 +51,7 @@ app.use('/profile', profileRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/post', postRouter);
+app.use('/search', searchRouter);
 
 // Sequelize
 const db = require('./config/database/database')

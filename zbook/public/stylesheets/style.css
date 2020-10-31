@@ -90,3 +90,12 @@ input{
   justify-content: center;
   align-items: center;
 }
+/* search */
+.searchUsers{
+ display: flex;
+ flex-wrap: wrap;
+}
+#pp{ 
+  border-radius: 50%;
+}
+

@@ -7,19 +7,23 @@ let listaComentarios = require("../modules/commentsModule");
 
 const controller = {
     index: (req, res) => {
-    Usuarios.findAll({
-        })
-            .then((usuarios) => {
-                return res.render("feed", {
-                  title: "Z-Book",
-                  usuarios: usuarios,
-                  listaUsuarios: listaUsuarios.lista,
-                  listaPosts: listaPosts.lista,
-                  listaComentarios: listaComentarios.lista,
-                });
-            })
-        
-            .catch(err => console.log(err))
+        if (req.session.user == undefined) {
+            res.redirect('/')
+        } else {
+            Usuarios.findAll({
+                })
+                    .then((usuarios) => {
+                        return res.render("feed", {
+                        title: "Z-Book",
+                        usuarios: usuarios,
+                        listaUsuarios: listaUsuarios.lista,
+                        listaPosts: listaPosts.lista,
+                        listaComentarios: listaComentarios.lista,
+                        });
+                    })
+                
+                    .catch(err => console.log(err))
+        }
     },
 }
 

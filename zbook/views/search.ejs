@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="full-body">
+<head>
+    <%- include('./partials/headlinks.ejs') %>
+</head>
+    
+<body>
+    <%- include('./partials/header') %>
+    <main>  
+    <div class="searchUsers uk-position-relative uk-visible-toggle uk-light" tabindex="-1"
+    uk-slider="autoplay: true; autoplay-interval: 3000">
+    <ul class="banda uk-slider-items uk-child-width-1-3@s uk-child-width-1-3@m">
+            <% for (let i = 0; i < results.length; i++) { %>
+                 <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center post-min">
+                    <a href="/profile/<%= results[i].id%>" class="link-detalle">
+                        <img id="pp" src="<%= results[i].profilePicture %>" alt="Foto de Perfil">
+                        <h2><%= results[i].username %></h2> 
+                        <div class= overlayProfile>
+                        <ul>   
+                            <li> email : <%= results[i].email %></li>
+                            <li> age : <%= results[i].age %></li>
+                            <li> birthday : <%= results[i].birthday %></li>
+                        </ul>
+                        </div>
+                    </a>
+                 </div>
+            <% } %>
+    </ul>
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+        uk-slider-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+        uk-slider-item="next"></a>
+    </div>
+
+        <div class="searchPosts">
+            <ul>
+            
+            </ul>
+        </div>
+        
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

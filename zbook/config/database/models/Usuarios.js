@@ -20,7 +20,10 @@ const Usuario = db.define('usuarios', {
         },
         birthday: {
             type: Sequelize.DataTypes.DATE
-        },  // todas las variable que tiene el objeto usuarios en la db
+        },
+        profilepicture: {
+            type: Sequelize.DataTypes.STRING
+        }
     },
     {
         timestamps: false,

@@ -4,7 +4,12 @@ const Usuarios = require('../config/database/models/Usuarios')
 const bcrypt = require('bcryptjs')
 const controller = {
     index: (req, res) => {
-        res.render("register", { title: "Register" });
+        if (req.session.user != undefined) {
+            return res.redirect('/feed')
+        } else {
+            res.render("register", { title: "Register" });
+        }
+        
     },
     add: (req, res) => {
         let formData = req.body

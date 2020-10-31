@@ -2,27 +2,33 @@ const db = require('../config/database/models/Usuarios')
 const bcrypt = require('bcryptjs')
 let loginController = {
   index: function (req, res) {
-    return res.render("login", { title: "Login" });
+        if (req.session.user != undefined) {
+          return res.redirect('/feed')
+        } else {
+          return res.render("login", { title: "Login" });
+        }
   },
   log: (req, res) => {
         let formData = req.body
-        let userPassword = bcrypt.hashSync(req.body.psw, 10)
         user = {
             username: formData.username,
-            password: userPassword,
+            password: formData.psw,
         }
         console.log(user.password);
         db.findOne({
-        where:  [{username: user.username}]
+          where:  [{username: user.username}]
         })
-        .then((usuarioEncontrado)=>{
-          if (usuarioEncontrado != null){
-            if (bcrypt.compareSync(user.password, usuarioEncontrado.password)){
+        .then((usuarioEncontrado) => {
+          if (usuarioEncontrado != null) {
+            console.log(bcrypt.hashSync(user.password, 10));
+            console.log(usuarioEncontrado.password);
+            if (bcrypt.compareSync(user.password, usuarioEncontrado.password) == false){
+              console.log("alguien se olvido la contrasena user");
+            }
+            else if (bcrypt.compareSync(user.password, usuarioEncontrado.password)) {
               console.log("bienvenido maquina!");
               req.session.user= usuarioEncontrado;
-            }
-            else {
-              console.log("alguien se olvido la contrasena");
+              return res.redirect('/feed');
             }
           }
           else {
@@ -36,7 +42,7 @@ let loginController = {
                     req.session.user= mailEncontrado;
                   }
                   else {
-                    console.log("alguien se olvido la contrasena");
+                    console.log("alguien se olvido la contrasena email");
                   }
                }
               else {
@@ -45,7 +51,11 @@ let loginController = {
             })
           }
         })
-    }
+    },
+  out: (req, res) => {
+    req.session.destroy()
+    return res.redirect('/')
+  }
 };
 
 module.exports = loginController;

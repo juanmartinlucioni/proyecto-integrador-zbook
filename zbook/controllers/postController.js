@@ -3,9 +3,13 @@ let listaPosts = require('../modules/postsModule');
 let listaComentarios = require('../modules/commentsModule');
 let postController = {
     index: function (req, res) {
-        return res.render("post", {
-            title: "Create a Post"
-        });
+        if (req.session.user == undefined) {
+            return res.redirect('/')
+        } else {
+            return res.render("post", {
+                title: "Create a Post"
+            });
+        }
     },
     details: function (req, res) {
         let idPost = req.params.id;
@@ -24,17 +28,18 @@ let postController = {
                 commentsPost: commentsPost,
             })
         }
+    },
+    add: (req, res) => {
+        let formData = req.body
+        newPost = {
+            caption: formData.caption,
+            imageId: formData.url,
+        }
+        db.create(newPost)
+        res.redirect('/home')
     }
 };
 
-add: (req, res) => {
-    let formData = req.body
-    newPost = {
-        caption: formData.caption,
-        imageId: formData.url,
-    }
-    db.create(newPost)
-    res.redirect('/home')
-}
+
 
 module.exports = postController;

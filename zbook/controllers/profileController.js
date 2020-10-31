@@ -1,28 +1,40 @@
-let profile = require("../modules/usersModule");
-let posts = require("../modules/postsModule");
+const db = require('../config/database/database');
+const Posts = require('../config/database/models/Posts')
+const Usuarios = require('../config/database/models/Usuarios')
+const op = db.Sequelize.Op;
 const controller = {
     index: (req, res) => {
-        return res.render('notFound', {
-            title: "Profile not found",
-            notFound: "Profile"
-        }); // Eventualmente esto va a redirigir al perfil del usuario loggeado
+        if (req.session.user != undefined) {
+          return res.redirect('/profile/'+ req.session.user.id);
+        } else {
+          return res.redirect('/login');
+        }
     },
     id: (req, res) => {
         let idProfile = req.params.id;
-        let detallesProfile = profile.pullUser(idProfile);
-        let detallesPost = posts.pullPost(idProfile);
-        if (detallesProfile == "F") {
-            return res.render('notFound', {
-                title: "Profile Not Found",
-                notFound: "Profile"
-            });            
-        } else {
-            return res.render("profile", {
-                title: "Profile",
-                details: detallesProfile,
-                post: detallesPost,
-            }); //eventualmente este title tiene que ser el nombre de la persona a quien pertenece el perfil
-        }
+        Usuarios.findByPk(idProfile)
+        .then((foundUser)=> {
+            if (foundUser == undefined) {
+                    return res.render('notFound', {
+                        title: "Profile Not Found",
+                        notFound: "Profile"
+                });            
+            } else {
+                Posts.findAll({
+                    where: {
+                        idusuario: {[op.like]: foundUser.id}
+                    }
+                })
+                .then((postList) => {
+                    return res.render("profile", {
+                        title: "Profile",
+                        details: foundUser,
+                        post: postList,
+                    });
+                })
+            }
+        })
+        
     },
 }
 

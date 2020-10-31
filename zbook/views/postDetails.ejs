@@ -6,13 +6,16 @@
 </head>
 
 <body>
-    <%- include('./partials/header') %>
+    <% if (locals.user == undefined) { %>
+        <%- include('./partials/headernouser') %>
+    <% } else { %> 
+        <%- include('./partials/header') %>
+    <% } %> 
     <main>
 <div class="uk-section uk-section-small">
     <div class="uk-container uk-container-large uk-flex">
         <section id="posts"
             class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
-
 <% detallesPost.forEach(element => { %>
             <%    idusuarioSearched = element.idusuario %>
             <%    nombrePoster = [] %>

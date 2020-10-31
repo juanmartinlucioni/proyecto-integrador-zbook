@@ -16,9 +16,12 @@
                      <li><a href=''>Explore</a></li>
                  </ul>
              </nav>
-             <a class='CTA' href='/profile/1'>
+             <a class='CTA' href='/profile/<%= user.id %>' >
                  <button type='button' id='nav-button' class='login-button'>Profile</button>
              </a>
+            <form action="/login/out" method="POST">
+             <button type='submit' id='nav-button' class='login-button'>Log Out</button>
+            </form>
            
 </header>
   <div class="postAdd">

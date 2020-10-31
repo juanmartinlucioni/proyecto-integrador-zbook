@@ -4,7 +4,7 @@
              </a>
              <div class='searchbox'>
                  <div class='searchbar-wrap'>
-                     <form name='search-form' action='' method='get' id='search-form'>
+                     <form name='search-form' action='/search' method='GET' id='search-form'>
                          <input type='text' name='search' value='' class='searchbar' id='searchbar'>
                      </form>
                  </div>
@@ -19,8 +19,8 @@
              <a class='CTA' href='/profile/<%= user.id %>' >
                  <button type='button' id='nav-button' class='login-button'>Profile</button>
              </a>
-             <form action="/login/out" method="POST">
-                <button type='submit' id='nav-button' class='login-button'>Log Out</button>
+            <form action="/login/out" method="POST">
+             <button type='submit' id='nav-button' class='login-button'>Log Out</button>
             </form>
            
 </header>

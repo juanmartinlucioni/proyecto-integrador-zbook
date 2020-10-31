@@ -1,5 +1,6 @@
 const db = require('../config/database/models/Usuarios')
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const { removeTicks } = require('sequelize/types/lib/utils');
 let loginController = {
   index: function (req, res) {
         if (req.session.user != undefined) {
@@ -28,7 +29,13 @@ let loginController = {
             else if (bcrypt.compareSync(user.password, usuarioEncontrado.password)) {
               console.log("bienvenido maquina!");
               req.session.user= usuarioEncontrado;
+              if(req.body.rememberme != undefined){
+                res.cookie('userId', user.id, {maxAge:20*1000})
+              };
               return res.redirect('/feed');
+            }
+            else {
+              console.log("alguien se olvido la contrasena");
             }
           }
           else {
@@ -40,6 +47,9 @@ let loginController = {
                   if (bcrypt.compareSync(user.password, mailEncontrado.password)){
                     console.log("que loco pa, te conectaste con el mail");
                     req.session.user= mailEncontrado;
+                    if(req.body.rememberme != undefined){
+                      res.cookie('userId', user.id, {maxAge:20*1000})
+                    };
                   }
                   else {
                     console.log("alguien se olvido la contrasena email");
@@ -51,6 +61,8 @@ let loginController = {
             })
           }
         })
+    //      if(req.body.rememberme != undefined){
+    //      res.cookie('userId', user.id, {maxAge:20*1000})
     },
   out: (req, res) => {
     req.session.destroy()

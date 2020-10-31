@@ -15,6 +15,7 @@ var profileRouter = require('./routes/profile');
 var registerRouter = require('./routes/register');
 var loginRouter = require('./routes/login');
 var postRouter = require('./routes/post');
+var searchRouter = require('./routes/search')
 
 var app = express();
 
@@ -42,6 +43,16 @@ app.use(function(req,res,next){
   }
   return next();
 })
+app.use(function(req,res,next){
+  if(req.cookies.userId != undefined && req.session.user == undefined){
+    db.User.findByPK(req.cookies.userId)
+    .then(function(user){
+      req.session.user = user;
+      return next();
+    })
+    .catch(e=> console.log(e))
+  }
+})
 // Llamada a Rutas
 app.use('/', indexRouter);
 app.use('/feed', feedRouter);
@@ -50,6 +61,7 @@ app.use('/profile', profileRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/post', postRouter);
+app.use('/search', searchRouter);
 
 // Sequelize
 const db = require('./config/database/database')

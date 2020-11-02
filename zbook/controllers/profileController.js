@@ -12,7 +12,13 @@ const controller = {
     },
     id: (req, res) => {
         let idProfile = req.params.id;
-        Usuarios.findByPk(idProfile, {include: ['posts'], order: [[{Posts}, 'fechaCreacion','DESC']]})
+        Usuarios.findByPk(idProfile, {
+            include: {
+                model: Posts,
+                as: 'posts',
+            },
+            order: [[{Posts},'fechaCreacion','DESC']]
+        })
         .then((foundUser)=> {
             if (foundUser == undefined) {
                     return res.render('notFound', {

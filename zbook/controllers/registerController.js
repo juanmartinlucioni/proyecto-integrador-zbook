@@ -72,7 +72,7 @@ const controller = {
                         else if (regPassword !== regPasswordConfirm) {
                             return console.log("no pego")
                         } else if (regAge < 13) {
-                            return console.log("tenes que ser mayor de 13 boludo")
+                            return console.log("tenes que ser mayor de 13")
                         } else {
                             newUser = {
                             username: formData.username,

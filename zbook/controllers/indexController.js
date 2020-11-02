@@ -1,6 +1,11 @@
 const controller = {
     index: (req, res) => {
-        return res.render('index', { title: 'Z-Book' });
+        if (req.session.user != undefined) {
+          return res.redirect('/feed');
+        } else {
+          return res.render('index', { title: 'Z-Book' });
+        }
+        
     },
 }
 

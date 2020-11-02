@@ -12,7 +12,7 @@ const controller = {
     },
     id: (req, res) => {
         let idProfile = req.params.id;
-        Usuarios.findByPk(idProfile)
+        Usuarios.findByPk(idProfile, {include: ['posts'], order: [[{Posts}, 'fechaCreacion','DESC']]})
         .then((foundUser)=> {
             if (foundUser == undefined) {
                     return res.render('notFound', {
@@ -20,20 +20,12 @@ const controller = {
                         notFound: "Profile"
                 });            
             } else {
-                Posts.findAll({
-                    where: {
-                        idusuario: {[op.like]: foundUser.id}
-                    },
-                    order: [['fechaCreacion','DESC']]
-                })
-                .then((postList) => {
-                    return res.render("profile", {
+                return res.render("profile", {
                         title: "Profile",
                         details: foundUser,
-                        post: postList,
-                    });
-                })
-            }
+                        post: foundUser.posts,
+                    }
+            )}
         })
         
     },

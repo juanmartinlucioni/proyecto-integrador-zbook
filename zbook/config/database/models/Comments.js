@@ -1,7 +1,9 @@
 const Sequelize = require('sequelize');
 const db = require('../database')
+const Usuario = require('../models/Usuarios')
+const Post = require('../models/Posts')
 
-const Comments = db.define("comments", {
+const Comment = db.define("comments", {
             id: {
                 type: Sequelize.DataTypes.INTEGER,
                 primaryKey: true,
@@ -9,7 +11,7 @@ const Comments = db.define("comments", {
             idpost: {
                 type: Sequelize.DataTypes.INTEGER,
             },
-            idusuarios: {
+            idusuario: {
                 type: Sequelize.DataTypes.INTEGER,
             },
             texto: {
@@ -22,17 +24,21 @@ const Comments = db.define("comments", {
         {
             timestamps: false,
         }
-    );
+);
 
-    // Comments.associate = function (models) {
-    //   Comments.belongsTo(models.Usuarios, {
-    //     as: "oneUser",
-    //     foreignKey: "idusuarios",
-    //   }),
-    //   Comments.belongsTo(model.Posts, {
-    //     as: "onePost",
-    //     foreignKey: "idpost"
-    //   })
-    // };
+// Comment.belongsTo(Usuario, {
+//     as: "user",
+//     foreignKey: "idusuario",
+// });
+Usuario.hasMany(Comment, {
+    as: "comments",
+    foreignKey: "idusuario",
+})
 
-module.exports = Comments
+// Comment.belongsTo(Post, {
+//     as: "post",
+//     foreignKey: "idpost"
+// })
+
+
+module.exports = Comment

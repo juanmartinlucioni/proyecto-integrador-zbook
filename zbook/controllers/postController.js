@@ -1,6 +1,8 @@
-let listaUsuarios = require('../modules/usersModule');
-let listaPosts = require('../modules/postsModule');
-let listaComentarios = require('../modules/commentsModule');
+const db = require('../config/database/database');
+const Posts = require('../config/database/models/Posts');
+const Usuarios = require('../config/database/models/Usuarios');
+// const Comments = require('../config/database/models/Comments');
+const op = db.Sequelize.Op;
 let postController = {
     index: function (req, res) {
         if (req.session.user == undefined) {
@@ -12,22 +14,19 @@ let postController = {
         }
     },
     details: function (req, res) {
-        let idPost = req.params.id;
-        let detallesPost = listaPosts.pullPostDetails(idPost);
-        let commentsPost = listaComentarios.pullPostComments(idPost)
-        if (detallesPost == "F") {
-            return res.render("notFound", {
-                title: "Post Not Found",
-                notFound: "Post"                
-            })
-        } else {
-            return res.render("postDetails", {
-                title: 'Post Details',
-                listaUsuarios: listaUsuarios.lista,
-                detallesPost: detallesPost,
-                commentsPost: commentsPost,
-            })
-        }
+        let idPosts = req.params.id;
+        Posts.findByPk(idPosts)
+            .then((foundPost)=> {
+                if(foundPost == undefined){
+                    return res.render('notFound', { title: "Post Not Found",
+                      notFound: "Post"
+                    });
+                } else {                        return res.render("postDetails", {
+                            title: "post",
+                            detallesPost: foundPost,
+                        })
+                    }
+                })    
     },
     add: (req, res) => {
         let formData = req.body

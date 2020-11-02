@@ -5,7 +5,7 @@ CREATE SCHEMA `zbook` ;
 CREATE TABLE `zbook`.`usuarios` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(12) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(999) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `age` INT UNSIGNED NOT NULL,
   `birthday` DATE NOT NULL,

@@ -23,7 +23,8 @@ const controller = {
                 Posts.findAll({
                     where: {
                         idusuario: {[op.like]: foundUser.id}
-                    }
+                    },
+                    order: [['fechaCreacion','DESC']]
                 })
                 .then((postList) => {
                     return res.render("profile", {
@@ -36,6 +37,38 @@ const controller = {
         })
         
     },
+    edit: (req, res) => {
+        if (req.session.user != undefined) {
+            Usuarios.findByPk(req.session.user.id)
+            .then((foundUser)=> {
+                return res.render('editProfile', {
+                title: "Edit Profile",
+                details: foundUser,
+            });
+            })
+        } else {
+          return res.redirect('/login');
+        }
+    },
+    update: (req, res) => {
+        let formData = req.body
+        updateData = {
+            email: formData.email,
+            birthday: formData.birthday,
+            profilepicture: "/images/profilepicstemp/"+ formData.profilepicture +".jpg"
+        }
+        Usuarios.update({
+            email: updateData.email,
+            birthday: updateData.birthday,
+            profilePicture: updateData.profilepicture
+        },
+        {
+            where: {
+                id: req.session.user.id
+            }
+        })
+        return res.redirect('/profile')
+    }
 }
 
 module.exports = controller

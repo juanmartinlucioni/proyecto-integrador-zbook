@@ -1,8 +1,7 @@
 const Sequelize = require('sequelize');
-const db = require('../config/database/database')
+const db = require('../database')
 
-module.exports = () => {
-    const Comments = db.define("comments", {
+const Comments = db.define("comments", {
             id: {
                 type: Sequelize.DataTypes.INTEGER,
                 primaryKey: true,
@@ -25,16 +24,15 @@ module.exports = () => {
         }
     );
 
-    Comments.associate = function (models) {
-      Comments.belongsTo(models.Usuarios, {
-        as: "oneUser",
-        foreignKey: "idusuarios",
-      }),
-      Comments.belongsTo(model.Posts, {
-        as: "onePost",
-        foreignKey: "idpost"
-      })
-    };
+    // Comments.associate = function (models) {
+    //   Comments.belongsTo(models.Usuarios, {
+    //     as: "oneUser",
+    //     foreignKey: "idusuarios",
+    //   }),
+    //   Comments.belongsTo(model.Posts, {
+    //     as: "onePost",
+    //     foreignKey: "idpost"
+    //   })
+    // };
 
-    return Comments
-}
+module.exports = Comments

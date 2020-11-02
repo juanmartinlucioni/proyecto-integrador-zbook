@@ -1,5 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../database')
+const Usuario = require('../models/Usuarios')
+const Comments = require('../models/Comments')
 
 const Post = db.define("post", {
         id: {
@@ -25,10 +27,13 @@ const Post = db.define("post", {
     }
 );
 
-    // Posts.associate = function(models) {
-    //     Posts.belongsTo(models.Usuarios, {
-    //         as: 'oneUser',
-    //         foreignKey: 'idusuarios'
-    //     })
-    // }
+Post.hasMany(Comments, {
+    as: 'comments',
+    foreignKey: 'idpost'
+})
+Usuario.hasMany(Post, {
+    as: "posts",
+    foreignKey: "idusuario",
+})
+
 module.exports = Post;

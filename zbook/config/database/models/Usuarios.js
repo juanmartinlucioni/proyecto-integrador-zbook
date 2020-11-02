@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize');
+const Sequelize = require('sequelize');
 const db = require('../database')
 
 const Usuario = db.define('usuarios', {
@@ -29,5 +29,14 @@ const Usuario = db.define('usuarios', {
         timestamps: false,
     }
 );
+
+// Usuario.hasMany(Comment, {
+//     as: "comments",
+//     foreignKey: "idusuario",
+// })
+// Usuario.hasMany(Posts, {
+//     as: "posts",
+//     foreignKey: "idusuario",
+// })
 
 module.exports = Usuario;

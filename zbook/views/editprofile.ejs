@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" class="full-body">
+
+<head>
+    <%- include('./partials/headlinks.ejs') %>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+    <main id="main-form">
+        <div class="uk-section uk-section-small">
+            <div class="uk-container uk-container-large uk-flex">
+                <form action="/profile/me/edit" method="POST">
+                    <h2>Edit Info</h2>
+                    <div class="form-information" id="edit-profile">
+                        <label for="user-email"><b>Email</b></label>
+                        <input type="text" value="<%= details.email %>" id="user-email" name="email">
+                        <label for="user-birthday"><b>Birthday</b></label>
+                        <input type="date" value="<%= details.birthday %>" id="user-birthday" name="birthday">
+                        <label for="user-picture"><b>Profile Picture</b></label>
+                        <select id="user-picture" name="profilepicture">
+                            <option value="1">Rayo McQueen</option>
+                            <option value="2">Mate</option>
+                            <option value="3">Sally</option>
+                            <option value="4">Francesco</option>
+                            <option value="5">Doc Hudson</option>
+                        </select>
+                        <button class="button full-width" type="submit">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>

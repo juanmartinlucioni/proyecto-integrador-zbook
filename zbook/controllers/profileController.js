@@ -12,7 +12,7 @@ const controller = {
     },
     id: (req, res) => {
         let idProfile = req.params.id;
-        Usuarios.findByPk(idProfile)
+        Usuarios.findByPk(idProfile, {include: ['posts'], order: [[{Posts}, 'fechaCreacion','DESC']]})
         .then((foundUser)=> {
             if (foundUser == undefined) {
                     return res.render('notFound', {
@@ -20,22 +20,47 @@ const controller = {
                         notFound: "Profile"
                 });            
             } else {
-                Posts.findAll({
-                    where: {
-                        idusuario: {[op.like]: foundUser.id}
-                    }
-                })
-                .then((postList) => {
-                    return res.render("profile", {
+                return res.render("profile", {
                         title: "Profile",
                         details: foundUser,
-                        post: postList,
-                    });
-                })
-            }
+                        post: foundUser.posts,
+                    }
+            )}
         })
         
     },
+    edit: (req, res) => {
+        if (req.session.user != undefined) {
+            Usuarios.findByPk(req.session.user.id)
+            .then((foundUser)=> {
+                return res.render('editProfile', {
+                title: "Edit Profile",
+                details: foundUser,
+            });
+            })
+        } else {
+          return res.redirect('/login');
+        }
+    },
+    update: (req, res) => {
+        let formData = req.body
+        updateData = {
+            email: formData.email,
+            birthday: formData.birthday,
+            profilepicture: "/images/profilepicstemp/"+ formData.profilepicture +".jpg"
+        }
+        Usuarios.update({
+            email: updateData.email,
+            birthday: updateData.birthday,
+            profilePicture: updateData.profilepicture
+        },
+        {
+            where: {
+                id: req.session.user.id
+            }
+        })
+        return res.redirect('/profile')
+    }
 }
 
 module.exports = controller

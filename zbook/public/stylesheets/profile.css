@@ -17,6 +17,10 @@ section.info-usuario {
     border-radius: 50%;
 }
 
+.profile-username {
+    align-items: center;
+}
+
 section.info-usuario div {
     color: white;
 }
@@ -31,6 +35,10 @@ section.info-usuario div {
 
 section.info-usuario h3 {
     color: white;
+}
+
+.red-usuario {
+    padding: 0;
 }
 
 p.post-desc {

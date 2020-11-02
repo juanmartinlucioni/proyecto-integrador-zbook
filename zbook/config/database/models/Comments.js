@@ -35,6 +35,11 @@ Usuario.hasMany(Comment, {
     foreignKey: "idusuario",
 })
 
+Comment.belongsTo(Usuario, {
+    as: 'user',
+    foreignKey: 'idusuario'
+})
+
 // Comment.belongsTo(Post, {
 //     as: "post",
 //     foreignKey: "idpost"

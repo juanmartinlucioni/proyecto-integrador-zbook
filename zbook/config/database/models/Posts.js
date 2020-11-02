@@ -27,6 +27,11 @@ const Post = db.define("post", {
     }
 );
 
+Post.belongsTo(Usuario, {
+    as: 'user',
+    foreignKey: 'idusuario'
+})
+
 Post.hasMany(Comments, {
     as: 'comments',
     foreignKey: 'idpost'

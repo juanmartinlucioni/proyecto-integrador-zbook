@@ -2,10 +2,6 @@ const db = require('../config/database/database');
 const Posts = require('../config/database/models/Posts');
 const Usuarios = require('../config/database/models/Usuarios');
 const Comments = require('../config/database/models/Comments');
-let listaUsuarios = require("../modules/usersModule");
-let listaPosts = require("../modules/postsModule");
-let listaComentarios = require("../modules/commentsModule");
-const comments = require('../modules/commentsModule');
 
 const controller = {
     index: (req, res) => {

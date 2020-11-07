@@ -30,7 +30,7 @@ const Comment = db.define("comments", {
 //     as: "user",
 //     foreignKey: "idusuario",
 // });
-Usuario.hasMany(Comment, {
+db.models.usuarios.hasMany(Comment, {
     as: "comments",
     foreignKey: "idusuario",
 })
@@ -44,6 +44,5 @@ Comment.belongsTo(Usuario, {
 //     as: "post",
 //     foreignKey: "idpost"
 // })
-
 
 module.exports = Comment

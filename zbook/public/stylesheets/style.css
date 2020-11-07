@@ -114,4 +114,22 @@ input, select{
 #pp{ 
   border-radius: 50%;
 }
+.explore{
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.post-explore{
+  margin: 15px;
+  width: 400px;
+  height: 400px;
+}
+.post-explore img{
+ display: block;
+ width:400px;
+ height:400px;
+ /* width: auto;
+ height: auto; */
+}
 

@@ -30,6 +30,7 @@ const Usuario = db.define('usuarios', {
     }
 );
 
+
 // Usuario.hasMany(Comment, {
 //     as: "comments",
 //     foreignKey: "idusuario",

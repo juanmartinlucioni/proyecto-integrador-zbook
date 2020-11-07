@@ -50,8 +50,11 @@ const controller = {
                 errores = []
                 if(foundUser != null) {
                     // return res.send('ya existe')
-                    errores.push("rip ya existe");
-                    return res.send(errores)
+                    errores.push("Username already exists");
+                    return res.render('registerErrors', {
+                        title: "Error in registration",
+                        errores: errores
+                    })
                 } else {
                     Usuarios.findOne({
                         where: [{
@@ -60,28 +63,29 @@ const controller = {
                     })
                     .then((foundEmail) => {
                         if(foundEmail != null) {
-                            errores.push("email usado")
-                            // return console.log("email usado");
+                            errores.push("Email already in use")
                         }
                         if ((nuevoUsuario.length <=3)) {
-                            errores.push("oh no")
+                            errores.push("Username must be longer than three characters")
                         }
                         if (validateEmail(nuevoEmail) == false) {
-                            errores.push("email wrong wacho")
+                            errores.push("Invalid Email used")
                         }
                         if ((regPassword.length < 6)) {
-                            errores.push("mala pass")
+                            errores.push("Password must be at least 6 characters long")
                         }
                         if (regPassword !== regPasswordConfirm) {
-                            errores.push("no pego")
+                            errores.push("Passwords didn't match")
                         }
                         if (regAge < 13) {
-                            errores.push("tenes que ser mayor de 13")
+                            errores.push("You must be 13 or older to register")
                         }
                         if (errores.length > 0){
-                            return res.send(errores)
+                            return res.render('registerErrors', {
+                                title: "Error in Registration",
+                                errores: errores
+                            })
                         } else {
-
                             newUser = {
                             username: formData.username,
                             email: formData.email,

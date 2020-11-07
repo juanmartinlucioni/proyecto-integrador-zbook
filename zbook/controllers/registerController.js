@@ -47,9 +47,11 @@ const controller = {
                 }]
             })
             .then((foundUser) => {
+                errores = []
                 if(foundUser != null) {
                     // return res.send('ya existe')
-                    return console.log("rip ya existe");
+                    errores.push("rip ya existe");
+                    return res.send(errores)
                 } else {
                     Usuarios.findOne({
                         where: [{
@@ -58,22 +60,28 @@ const controller = {
                     })
                     .then((foundEmail) => {
                         if(foundEmail != null) {
-                            return console.log("email usado");
+                            errores.push("email usado")
+                            // return console.log("email usado");
                         }
-                        else if ((nuevoUsuario.length <=3)) {
-                            return console.log("oh no")
+                        if ((nuevoUsuario.length <=3)) {
+                            errores.push("oh no")
                         }
-                        else if (validateEmail(nuevoEmail) == false) {
-                            return console.log("email wrong wacho")
+                        if (validateEmail(nuevoEmail) == false) {
+                            errores.push("email wrong wacho")
                         }
-                        else if ((regPassword.length < 6)) {
-                            return console.log("mala pass")
+                        if ((regPassword.length < 6)) {
+                            errores.push("mala pass")
                         }
-                        else if (regPassword !== regPasswordConfirm) {
-                            return console.log("no pego")
-                        } else if (regAge < 13) {
-                            return console.log("tenes que ser mayor de 13")
+                        if (regPassword !== regPasswordConfirm) {
+                            errores.push("no pego")
+                        }
+                        if (regAge < 13) {
+                            errores.push("tenes que ser mayor de 13")
+                        }
+                        if (errores.length > 0){
+                            return res.send(errores)
                         } else {
+
                             newUser = {
                             username: formData.username,
                             email: formData.email,

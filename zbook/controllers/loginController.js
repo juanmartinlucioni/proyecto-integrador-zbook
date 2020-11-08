@@ -46,7 +46,7 @@ let loginController = {
                   if (bcrypt.compareSync(user.password, mailEncontrado.password)){
                     req.session.user= mailEncontrado;
                     if(req.body.rememberme != undefined){
-                      res.cookie('userId', usuarioEncontrado.id, {maxAge:20*1000})
+                      res.cookie('userId', usuarioEncontrado.id, {maxAge:1*1000*60*60*2})
                     };
                     return res.redirect('/feed');
                   }

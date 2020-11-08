@@ -2,10 +2,13 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-// var cookieParser = require('cookie-parser');
+var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var logger = require('morgan');
 var Sequelize = require('sequelize');
+var Usuarios = require('./config/database/models/Usuarios')
+// Sequelize
+const db = require('./config/database/database')
 
 // Routers
 var indexRouter = require('./routes/index');
@@ -27,7 +30,7 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser());
+app.use(cookieParser());
 app.use(session(
   { secret: 'copapistao',
     resave: false,
@@ -44,16 +47,19 @@ app.use(function(req,res,next){
   }
   return next();
 })
+
+// Cookies
 // app.use(function(req,res,next){
 //   if(req.cookies.userId != undefined && req.session.user == undefined){
-//     db.User.findByPK(req.cookies.userId)
-//     .then(function(user){
+//     Usuarios.findByPK(req.cookies.userId)
+//     .then(function(user) {
 //       req.session.user = user;
 //       return next();
 //     })
 //     .catch(e=> console.log(e))
 //   }
 // })
+
 // Llamada a Rutas
 app.use('/', indexRouter);
 app.use('/feed', feedRouter);
@@ -64,9 +70,6 @@ app.use('/login', loginRouter);
 app.use('/post', postRouter);
 app.use('/search', searchRouter);
 app.use('/explore', exploreRouter)
-
-// Sequelize
-const db = require('./config/database/database')
 
 
 db.authenticate()

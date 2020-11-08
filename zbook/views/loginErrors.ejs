@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" class="full-body">
+
+<head>
+    <%- include('./partials/headlinks.ejs') %>
+</head>
+
+<body>
+    <%- include('./partials/headernouser') %>
+    <main class="reg-errors">
+        <h1>There were some errors in your login form:</h1>
+        <ul>
+            <% errores.forEach(element => { %>
+            <li class="errors"><%= element %></li>
+            <% }) %>
+        </ul>
+        <a href="/login" class="bottom-margin-15">
+            <button>Back to Login</button>
+        </a>
+        <p>Don't have a user yet?</p>
+        <a href="/register">
+            <button>Register Now</button>
+        </a>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+
+</html>

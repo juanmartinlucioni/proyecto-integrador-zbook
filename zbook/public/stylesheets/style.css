@@ -113,6 +113,11 @@ input, select{
 }
 #pp{ 
   border-radius: 50%;
+  height: 300px;
+  width: 300px;
+}
+.tarjeta:hover{
+  background-color:rgba(0, 136, 169, 0.8);
 }
 .explore{
   justify-content: center;

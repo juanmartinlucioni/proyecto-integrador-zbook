@@ -22,7 +22,7 @@ const Post = db.define("post", {
         },  // todas las variable que tiene el objeto usuarios en la db
     },
     {
-        timestamps: false,
+        timestamps: true,
         tableName: "post"
     }
 );

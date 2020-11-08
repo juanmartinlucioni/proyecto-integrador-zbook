@@ -51,7 +51,7 @@ app.use(function(req,res,next){
 // Cookies
 // app.use(function(req,res,next){
 //   if(req.cookies.userId != undefined && req.session.user == undefined){
-//     Usuarios.findByPK(req.cookies.userId)
+//     db.models.usuarios.findByPK(req.cookies.userId)
 //     .then(function(user) {
 //       req.session.user = user;
 //       return next();

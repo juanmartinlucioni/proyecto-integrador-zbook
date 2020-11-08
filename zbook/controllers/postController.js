@@ -58,6 +58,83 @@ let postController = {
         console.log(newPost);
         Posts.create(newPost)
         return res.redirect('/profile')
+    },
+    edit: (req, res) => {
+        if (req.session.user == undefined) {
+            return res.redirect('/')
+        } else {
+            idPost = req.params.id
+            Posts.findByPk(idPost, {
+                include: [{
+                    model: Usuarios,
+                    as: 'user',
+                    order: [[{Posts},'fechaCreacion','DESC']]
+                }]
+            })
+            .then((details) => {
+                if (details.user.id != req.session.user.id) {
+                    return res.redirect('/profile')
+                } else {
+                    return res.render('editPost', {
+                        title: "Edit Post",
+                        details: details
+                    })
+                }
+            })  
+        }
+    },
+    update: (req, res) => {
+        let idPost = req.params.id
+        let formData = req.body
+        updateData = {
+            url: formData.picture,
+            textoPost: formData.caption,
+        }
+        Posts.update({
+            url: updateData.url,
+            textoPost: updateData.textoPost,
+        },
+        {
+            where: {
+                id: idPost
+            }
+        })
+        return res.redirect('/post/' + idPost)
+    },
+    delete: (req, res) => {
+        if (req.session.user == undefined) {
+            return res.redirect('/')
+        } else {
+            //agregar redirect si no es el usuario dueño del post
+            idPost = req.params.id
+            Posts.findByPk(idPost, {
+                include: [{
+                    model: Usuarios,
+                    as: 'user',
+                    order: [[{Posts},'fechaCreacion','DESC']]
+                }]
+            })
+            .then((details) => {
+                if (details.user.id != req.session.user.id) {
+                    return res.redirect('/profile')
+                } else {
+                    return res.render('deletePost', {
+                        title: "Delete Post",
+                        details: idPost
+                    })
+                }
+            })
+            
+        }
+    },
+    destroy: (req, res) => {
+        let idPost = req.params.id
+        Posts.destroy({
+            where: {
+                id: idPost
+            }
+        })
+        return res.redirect('/profile')
     }
 };
 

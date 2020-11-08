@@ -15,18 +15,34 @@ let postController = {
     },
     details: function (req, res) {
         let idPosts = req.params.id;
-        Posts.findByPk(idPosts)
-            .then((foundPost)=> {
-                if(foundPost == undefined){
-                    return res.render('notFound', { title: "Post Not Found",
-                      notFound: "Post"
+        Posts.findByPk(idPosts, {
+            include: [{
+                model: Usuarios,
+                as: 'user',
+                order: [[{Posts},'fechaCreacion','DESC']]
+            },
+            {
+                model: Comments,
+                as: 'comments',
+                order: [[{Comments},'fechaCreacion','DESC']],
+                include: [{
+                    model: Usuarios,
+                    as: 'user'
+                }]
+            }]
+        })
+        .then((foundPost) => {
+            if(foundPost == undefined){
+                return res.render('notFound', { title: "Post Not Found",
+                  notFound: "Post"
+                });
+            } else {
+            return res.render("postDetails", {
+                    title: "Post Details",
+                    detallesPost: foundPost,
                     });
-                } else {                        return res.render("postDetails", {
-                            title: "post",
-                            detallesPost: foundPost,
-                        })
-                    }
-                })    
+            }
+        })
     },
     add: (req, res) => {
         let formData = req.body

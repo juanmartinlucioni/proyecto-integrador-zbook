@@ -1,7 +1,7 @@
 const db = require('../config/database/database');
 const Posts = require('../config/database/models/Posts');
 const Usuarios = require('../config/database/models/Usuarios');
-// const Comments = require('../config/database/models/Comments');
+const Comments = require('../config/database/models/Comments');
 const op = db.Sequelize.Op;
 let postController = {
     index: function (req, res) {
@@ -37,6 +37,7 @@ let postController = {
                   notFound: "Post"
                 });
             } else {
+                // return res.send(foundPost)
             return res.render("postDetails", {
                     title: "Post Details",
                     detallesPost: foundPost,

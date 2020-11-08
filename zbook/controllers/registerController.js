@@ -94,6 +94,7 @@ const controller = {
                             birthday: formData.birthday,
                             // securityQuestion: formData.question,
                             // answer: formData.answer
+                            
                             }
                             console.log(newUser);
                             Usuarios.create(newUser)

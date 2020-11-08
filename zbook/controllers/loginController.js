@@ -32,7 +32,7 @@ let loginController = {
             else {
               req.session.user= usuarioEncontrado;
               if(req.body.rememberme != undefined){
-                res.cookie('userId', usuarioEncontrado.id, {maxAge:20*1000})
+                res.cookie('userId', usuarioEncontrado.id, {maxAge:1*1000*60*60*2})
               };
               return res.redirect('/feed');
             }

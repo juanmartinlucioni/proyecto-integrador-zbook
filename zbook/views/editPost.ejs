@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" class="full-body">
+
+<head>
+    <%- include('./partials/headlinks.ejs') %>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+    <main id="main-form">
+        <div class="uk-section uk-section-small">
+            <div class="uk-container uk-container-large uk-flex">
+                <form action="/post/edit/update/<%= details.id %>" method="POST">
+                    <h2>Edit Post</h2>
+                    <div class="form-information" id="edit-profile">
+                        <label for="post-picture"><b>Edit Picture</b></label>
+                        <input type="text" value="<%= details.url %>" id="post-picture" name="picture">
+                        <label for="post-caption"><b>Edit Caption</b></label>
+                        <input type="text" value="<%= details.textoPost %>" id="post-caption" name="caption">
+                        <button class="button full-width bottom-margin-15" type="submit">Update</button>
+                        <button class="button full-width link-button"><a href="/post/<%= details.id %>">Back to Post</a></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+
+</html>

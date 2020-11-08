@@ -10,9 +10,9 @@
     <% if (results.length >= 4){ %>
     <div class="searchUsers uk-position-relative uk-visible-toggle uk-light" tabindex="-1"
     uk-slider="autoplay: true; autoplay-interval: 3000">
-    <ul class="banda uk-slider-items uk-child-width-1-3@s uk-child-width-1-3@m">
+    <ul class="banda uk-slider-items uk-child-width-1-5@s uk-child-width-1-5@m">
             <% for (let i = 0; i < results.length; i++) { %>
-                 <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center post-min">
+                 <div class="tarjeta uk-card uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center post-min">
                     <a href="/profile/<%= results[i].id%>" class="link-detalle">
                         <img id="pp" src="<%= results[i].profilePicture %>" alt="Foto de Perfil">
                         <h2><%= results[i].username %></h2> 

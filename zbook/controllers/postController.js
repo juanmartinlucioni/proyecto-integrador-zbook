@@ -46,12 +46,17 @@ let postController = {
     },
     add: (req, res) => {
         let formData = req.body
+        let date = new Date()
+        dateNoTime = date.toJSON().substring(0,10)
         newPost = {
-            caption: formData.caption,
-            imageId: formData.url,
+            idusuario: req.session.user.id,
+            textoPost: formData.caption,
+            fechaCreacion: dateNoTime,
+            url: '/images/poststemp/' + formData.url + '.jpg',
         }
-        db.create(newPost)
-        res.redirect('/home')
+        console.log(newPost);
+        Posts.create(newPost)
+        return res.redirect('/profile')
     }
 };
 

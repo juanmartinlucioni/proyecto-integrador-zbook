@@ -5,7 +5,7 @@ const op = db.Sequelize.Op;
 const controller = {
     index: (req, res) => {
         if (req.session.user != undefined) {
-          return res.redirect('/profile/'+ req.session.user.id);
+        return res.redirect('/profile/'+ req.session.user.id);
         } else {
           return res.redirect('/login');
         }

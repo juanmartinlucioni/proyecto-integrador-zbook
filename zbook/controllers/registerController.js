@@ -47,9 +47,14 @@ const controller = {
                 }]
             })
             .then((foundUser) => {
+                errores = []
                 if(foundUser != null) {
                     // return res.send('ya existe')
-                    return console.log("rip ya existe");
+                    errores.push("Username already exists");
+                    return res.render('registerErrors', {
+                        title: "Error in registration",
+                        errores: errores
+                    })
                 } else {
                     Usuarios.findOne({
                         where: [{
@@ -58,21 +63,28 @@ const controller = {
                     })
                     .then((foundEmail) => {
                         if(foundEmail != null) {
-                            return console.log("email usado");
+                            errores.push("Email already in use")
                         }
-                        else if ((nuevoUsuario.length <=3)) {
-                            return console.log("oh no")
+                        if ((nuevoUsuario.length <=3)) {
+                            errores.push("Username must be longer than three characters")
                         }
-                        else if (validateEmail(nuevoEmail) == false) {
-                            return console.log("email wrong wacho")
+                        if (validateEmail(nuevoEmail) == false) {
+                            errores.push("Invalid Email used")
                         }
-                        else if ((regPassword.length < 6)) {
-                            return console.log("mala pass")
+                        if ((regPassword.length < 6)) {
+                            errores.push("Password must be at least 6 characters long")
                         }
-                        else if (regPassword !== regPasswordConfirm) {
-                            return console.log("no pego")
-                        } else if (regAge < 13) {
-                            return console.log("tenes que ser mayor de 13")
+                        if (regPassword !== regPasswordConfirm) {
+                            errores.push("Passwords didn't match")
+                        }
+                        if (regAge < 13) {
+                            errores.push("You must be 13 or older to register")
+                        }
+                        if (errores.length > 0){
+                            return res.render('registerErrors', {
+                                title: "Error in Registration",
+                                errores: errores
+                            })
                         } else {
                             newUser = {
                             username: formData.username,

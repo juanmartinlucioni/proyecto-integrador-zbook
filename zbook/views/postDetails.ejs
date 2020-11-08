@@ -16,25 +16,16 @@
     <div class="uk-container uk-container-large uk-flex">
         <section id="posts"
             class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
-<% detallesPost.forEach(element => { %>
-            <%    idusuarioSearched = element.idusuario %>
-            <%    nombrePoster = [] %>
-            <%    profPic = [] %>
-            <%    listaUsuarios.forEach(element => { %>
-            <%    if (element.id == idusuarioSearched) { %>
-            <%      nombrePoster.push(element.username) %>
-            <%      profPic.push(element.profilepicture) %>
-            <%    } %>
-            <% }); %>
+
             <article class="post uk-card-default uk-flex uk-flex-column">
                 <div class="info-usuario uk-flex ">
                     <div>
-                        <img src="<%= profPic[0] %> " alt="" height="60px" width="60px" class="profile-picture">
+                        <img src="<%= detallesPost.user.profilePicture%>" alt="" height="60px" width="60px" class="profile-picture">
                     </div>
-                    <h4><a href="/profile/<%= element.idusuario %>"><%= nombrePoster %> </a></h4>
+                    <h4><a href="/profile/<%= detallesPost.user.id%>"><%= detallesPost.user.username %> </a></h4>
                 </div>
                 <div class="post-body uk-flex uk-flex-center">
-                    <img src="<%= element.url %>" alt="">
+                    <img src="<%= detallesPost.url %>" alt="">
                 </div>
                 <div class="post-reacciones">
                     <ul class="post-icons uk-flex uk-flex-between">
@@ -44,34 +35,22 @@
                         </li>
                     </ul>
                     <div class="post-pie uk-flex">
-                        <h5 class="uk-width-1-6"><a href="/profile/<%= element.idusuario %>"><%= nombrePoster %> </a></h5>
-                        <p class="uk-width-5-6"><%= element.textoPost %> </p>
+                        <h5 class="uk-width-1-6"><a href="/profile"> </a></h5>
+                        <p class="uk-width-5-6"><%= detallesPost.textoPost %> </p>
                     </div>
                 </div>
                 <div class="post-comentarios">
                     <h6>Comentarios</h6>
                     <ul>
-                        <% for (let i = 0; i < commentsPost.length; i++) { %>
-                        <%    idusuarioSearched = commentsPost[i].idusuario %>
-                        <%    nombreCommenter = [] %>
-                        <%    listaUsuarios.forEach(element => { %>
-                        <%    if (element.id == idusuarioSearched) { %>
-                        <%      nombreCommenter.push(element.username) %>
-                        <%    } %>
-                        <% }); %>
-                        <%    if (element.id == commentsPost[i].idpost) { %>
-                        <%      nombreCommenter.push(element.username) %>
-                        <li>
-                            <a href="/profile/<%= commentsPost[i].idusuario %>"> <%= nombreCommenter[0] %> </a>
-                            <p><%= commentsPost[i].texto %> </p>
-                        </li>
-                        <%    } %>
-                        <% } %>
+                        <% for (let i = 0; i < detallesPost.comments.length; i++) { %>
+                            <li><%= detallesPost.comments[i].user.username%> : <%= detallesPost.comments[i].texto%></li>
+                        <%}%>
+
                     </ul>
                 </div>
             </article>
 
-            <% }); %>
+            
         </section>
 
     </div>

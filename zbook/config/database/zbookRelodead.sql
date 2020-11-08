@@ -57,7 +57,7 @@ VALUES (DEFAULT, 'JuanMartin', '91142069', 'juanmartinlucioni@gmail.com', 23, '1
 INSERT INTO `zbook`.`usuarios`
 VALUES (DEFAULT, 'Jim', '91142069', 'jim@gmail.com', 19, '2001-04-23', '/images/profilepicstemp/2-pp.jpg',DEFAULT,DEFAULT);
 INSERT INTO `zbook`.`usuarios`
-VALUES (DEFAULT, 'Matias', '91142069', 'mati@gmail.com', 20, '2000-05-26', '/images/profilepicstemp/3-pp.jpg',DEFAULT,DEFAULT);
+VALUES (DEFAULT, 'Matias', '91142069', 'mati@gmail.com', 20, '2000-05-30', '/images/profilepicstemp/3-pp.jpg',DEFAULT,DEFAULT);
 INSERT INTO `zbook`.`usuarios`
 VALUES (DEFAULT, 'MadisonBeer', '91142069', 'madison@gmail.com', 24, '1996-04-12', '/images/profilepicstemp/4-pp.jpg',DEFAULT,DEFAULT);
 INSERT INTO `zbook`.`usuarios`
@@ -65,9 +65,9 @@ VALUES (DEFAULT, 'Cristiano', '91142069', 'cris@gmail.com', 35, '1985-01-05', '/
 INSERT INTO `zbook`.`usuarios`
 VALUES (DEFAULT, 'Pepson', '91142069', 'pepinilla@gmail.com', 18, '2002-03-03', '/images/profilepicstemp/6-pp.jpg',DEFAULT,DEFAULT);
 INSERT INTO `zbook`.`usuarios`
-VALUES (DEFAULT, 'Boquita', '91142069', 'elmasgrande@gmail.com', 21, '1905-12-12', '/images/profilepicstemp/7-pp.jpg',DEFAULT,DEFAULT);
+VALUES (DEFAULT, 'Boquita', '91142069', 'elmasgrande@gmail.com', 114, '1905-12-12', '/images/profilepicstemp/7-pp.jpg',DEFAULT,DEFAULT);
 INSERT INTO `zbook`.`usuarios`
-VALUES (DEFAULT, 'Nicky', '91142069', 'nicole@gmail.com', 114, '1999-04-04', '/images/profilepicstemp/8-pp.jpg',DEFAULT,DEFAULT);
+VALUES (DEFAULT, 'Nicky', '91142069', 'nicole@gmail.com', 21, '1999-04-04', '/images/profilepicstemp/8-pp.jpg',DEFAULT,DEFAULT);
 INSERT INTO `zbook`.`usuarios`
 VALUES (DEFAULT, 'FeliRattagan', '91142069', 'felu@gmail.com', 18, '2002-02-06', '/images/profilepicstemp/9-pp.jpg',DEFAULT,DEFAULT);
 INSERT INTO `zbook`.`usuarios`

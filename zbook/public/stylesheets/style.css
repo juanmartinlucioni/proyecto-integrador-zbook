@@ -33,11 +33,19 @@ main{
 
 ul {
   list-style-type: none;
-  padding-left: 0 !important;
+  padding-left: 0;
 }
 
 .bottom-margin-15 {
   margin-bottom: 15px;
+}
+
+.link-button a {
+  color: white;
+}
+
+.link-button a:hover {
+  text-decoration: none;
 }
 
 h1, h2, label {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="full-body">
 
 <head>
     <%- include('./partials/headlinks.ejs') %>
@@ -22,10 +22,10 @@
                     <div>
                         <img src="<%= detallesPost.user.profilePicture%>" alt="" height="60px" width="60px" class="profile-picture">
                     </div>
-                    <h4><a href="/profile/<%= detallesPost.user.id%>"><%= detallesPost.user.username %> </a></h4>
+                    <h4><a href="/profile/<%= detallesPost.user.id%>"><%= detallesPost.user.username %></a></h4>
                 </div>
                 <div class="post-body uk-flex uk-flex-center">
-                    <img src="<%= detallesPost.url %>" alt="">
+                    <img src="<%= detallesPost.url %>" alt="" height="500" width="500">
                 </div>
                 <div class="post-reacciones">
                     <ul class="post-icons uk-flex uk-flex-between">
@@ -33,17 +33,33 @@
                         </li>
                         <li><span class="" uk-icon="icon:comments; ratio: 1.3"></span>
                         </li>
+                        <% if(locals.user != undefined && detallesPost.user.id == locals.user.id) { %>
+                            <li>
+                                <a href="/post/edit/<%= detallesPost.id %>">
+                                    <span class="" uk-icon="icon:pencil; ratio: 1.3"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/post/delete/<%= detallesPost.id %>">
+                                    <span class="" uk-icon="icon:trash; ratio: 1.3"></span>
+                                </a>
+                            </li>
+                        <% } %> 
                     </ul>
                     <div class="post-pie uk-flex">
-                        <h5 class="uk-width-1-6"><a href="/profile"> </a></h5>
-                        <p class="uk-width-5-6"><%= detallesPost.textoPost %> </p>
+                        <h5 class="uk-width-1-6">
+                            <a href="/profile/<%= detallesPost.user.id%>"><%= detallesPost.user.username %></a>
+                        </h5>
+                        <p class="uk-width-5-6"><%= detallesPost.textoPost %></p>
                     </div>
                 </div>
                 <div class="post-comentarios">
                     <h6>Comentarios</h6>
                     <ul>
                         <% for (let i = 0; i < detallesPost.comments.length; i++) { %>
-                            <li><%= detallesPost.comments[i].user.username%> : <%= detallesPost.comments[i].texto%></li>
+                            <li><a href="/profile/<%= detallesPost.comments[i].user.id%>">
+                                <%= detallesPost.comments[i].user.username%></a>: <%= detallesPost.comments[i].texto%>
+                            </li>
                         <%}%>
 
                     </ul>

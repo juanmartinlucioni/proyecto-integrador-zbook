@@ -22,7 +22,7 @@ const Comment = db.define("comments", {
             },  // todas las variable que tiene el objeto comments en la db
         }, 
         {
-            timestamps: false,
+            timestamps: true,
         }
 );
 

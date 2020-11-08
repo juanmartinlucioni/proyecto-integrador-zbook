@@ -26,7 +26,7 @@ const Usuario = db.define('usuarios', {
         } // todas las variable que tiene el objeto usuarios en la db
     },
     {
-        timestamps: false,
+        timestamps: true,
     }
 );
 

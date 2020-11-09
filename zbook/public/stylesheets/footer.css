@@ -3,6 +3,7 @@ footer{
     color: white;
     background-color: black !important;
     padding: 0 10px;
+    z-index: 150;
 }
 
 footer ul{

@@ -23,7 +23,13 @@ const Usuario = db.define('usuarios', {
         }, 
         profilePicture: {
             type: Sequelize.DataTypes.STRING
-        } // todas las variable que tiene el objeto usuarios en la db
+        },
+        securityQuestion: {
+            type: Sequelize.DataTypes.INTEGER
+        },
+        answer: {
+            type: Sequelize.DataTypes.STRING
+        }
     },
     {
         timestamps: true,

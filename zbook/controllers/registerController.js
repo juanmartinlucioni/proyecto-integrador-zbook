@@ -92,9 +92,8 @@ const controller = {
                             password: userPassword,
                             age: getAge(formData.birthday),
                             birthday: formData.birthday,
-                            // securityQuestion: formData.question,
-                            // answer: formData.answer
-                            
+                            securityQuestion: formData.question,
+                            answer: formData.answer 
                             }
                             console.log(newUser);
                             Usuarios.create(newUser)

@@ -135,6 +135,30 @@ let postController = {
             }
         })
         return res.redirect('/profile')
+    },
+    commentAdd: (req, res) => {
+        let formData = req.body
+        let date = new Date()
+        dateNoTime = date.toJSON().substring(0,10)
+        commentData = {
+            idpost: req.params.id,
+            idusuario: req.session.user.id,
+            texto: formData.comment,
+            fechaCreacion: dateNoTime
+        }
+
+        Comments.create(commentData)
+        return res.redirect('/post/' + req.params.id)
+    },
+    commentDestroy: (req, res) => {
+        let idPost = req.params.idPost
+        let idComment = req.params.id
+        Comments.destroy({
+            where: {
+                id: idComment
+            }
+        })
+        return res.redirect('/post/' + idPost)
     }
 };
 

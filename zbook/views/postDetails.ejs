@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="full-body">
+<html>
 
 <head>
     <%- include('./partials/headlinks.ejs') %>
@@ -57,12 +57,27 @@
                     <h6>Comentarios</h6>
                     <ul>
                         <% for (let i = 0; i < detallesPost.comments.length; i++) { %>
-                            <li><a href="/profile/<%= detallesPost.comments[i].user.id%>">
+                            <li class="comment-container"><a href="/profile/<%= detallesPost.comments[i].user.id%>">
                                 <%= detallesPost.comments[i].user.username%></a>: <%= detallesPost.comments[i].texto%>
+                                <% if(locals.user != undefined && detallesPost.comments[i].user.id == locals.user.id) { %>
+                                <form action="/post/comment/delete/<%= detallesPost.id %>/<%= detallesPost.comments[i].id %>" class="comment-delete" method="POST">
+                                    <button class="comment-delete-button">
+                                        <span uk-icon="icon:trash; ratio: 1.3"></span>
+                                    </button>
+                                </form>
+                                <% } %>
                             </li>
+                             
                         <%}%>
 
                     </ul>
+                    <% if (locals.user != undefined) { %>
+                        <form action="/post/comment/add/<%= detallesPost.id %> " method="POST">
+                        <h6><label for="comment" class="comment-label">Add a Comment</label></h6>
+                        <input type="text" placeholder="Enter your comment" id="comment" name="comment">
+                        <button type="submit" class="bottom-margin-15">Add comment</button>
+                        </form>
+                    <% } %>
                 </div>
             </article>
 

@@ -51,12 +51,14 @@ app.use(function(req,res,next){
 // Cookies
 // app.use(function(req,res,next){
 //   if(req.cookies.userId != undefined && req.session.user == undefined){
-//     db.models.usuarios.findByPK(req.cookies.userId)
+//     Usuarios.findByPK(req.cookies.userId)
 //     .then(function(user) {
 //       req.session.user = user;
 //       return next();
 //     })
 //     .catch(e=> console.log(e))
+//   } else {
+//     return next();
 //   }
 // })
 
@@ -94,3 +96,23 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+// app.use(function(req, res, next){
+//   // return res.send(req.cookies);
+//   if(req.cookies.userId != undefined && req.session.user == undefined){
+//     //Buscar al usuario en la db
+//     db.User.findByPk(req.cookies.userId)
+//       .then(function(user){
+//         //Lo cargamos en la session
+//         req.session.user = user;
+//         res.locals.user = user;
+//         // res.redirect(req.originalUrl)
+//         return next();//Permite continuar el flujo cuando se resuelve la promesa
+//       })
+//       .catch(e => console.log(e))
+//   } else {
+//     return next(); //Encapsularlo acá hace que solo se ejecute si falla el if.
+//   }
+
+// })

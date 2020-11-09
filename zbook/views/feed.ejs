@@ -25,7 +25,23 @@
                             <div class="post-reacciones">
                                 <ul class="post-icons uk-flex uk-flex-between">
                                     <li><span class="" uk-icon="icon:heart; ratio: 1.3"></span></li>
-                                    <li><span class="" uk-icon="icon:comments; ratio: 1.3"></span></li>
+                                    <li>
+                                        <a href="/post/<%= element.id %> ">
+                                            <span class="" uk-icon="icon:comments; ratio: 1.3"></span>
+                                        </a>
+                                    </li>
+                                    <% if(locals.user != undefined && element.user.id == locals.user.id) { %>
+                                    <li>
+                                        <a href="/post/edit/<%= element.id %>">
+                                            <span class="" uk-icon="icon:pencil; ratio: 1.3"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/post/delete/<%= element.id %>">
+                                            <span class="" uk-icon="icon:trash; ratio: 1.3"></span>
+                                        </a>
+                                    </li>
+                                    <% } %>
                                 </ul>
                                 <div class="post-pie uk-flex">
                                     <h5 class="uk-width-1-6"><a href="/profile/<%= element.idusuario %>"><%= element.user.username %> </a></h5>
@@ -36,9 +52,16 @@
                                 <h6>Comentarios</h6>
                                 <ul>              
                                     <% element.comments.forEach(element => { %>
-                                        <li>
-                                            <a href="/profile/<%= element.idusuario %>"> <%= element.user.username %> </a>
-                                            <p><%= element.texto %> </p>
+                                        <li class="comment-container">
+                                        <a href="/profile/<%= element.user.id%>"><%= element.user.username%></a>: <%= element.texto%>
+                                        <% if(locals.user != undefined && element.user.id == locals.user.id) { %>
+                                        <form action="/post/comment/delete/<%= element.idpost %>/<%= element.id %>" class="comment-delete"
+                                            method="POST">
+                                            <button class="comment-delete-button">
+                                                <span uk-icon="icon:trash; ratio: 1.3"></span>
+                                            </button>
+                                        </form>
+                                        <% } %>
                                         </li>
                                     <% }) %> 
                                     <a class="view-more" href="/post/<%= element.id %> ">Ver más...</a>

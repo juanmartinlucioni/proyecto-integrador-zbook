@@ -13,9 +13,14 @@
                         <% nombrePoster = element.user.username %>
                         <% idPoster = element.idusuario %>
                         <% profPic = element.user.profilePicture %>
-        <div class="post-explore">
-            <a href="/post/<%= element.id %>"><img src="<%= element.url %>" alt=""></a>
-        </div>             
+        <a href="/post/<%= element.id %>">
+        <div class="post-search">
+            <div class="overlay">
+                        <h3><%= element.textoPost %></h3> 
+            </div> 
+                <img src="<%= element.url %>" alt="">
+        </div>  
+        </a>           
         <% }); %>
     </main>
     <%- include('./partials/footer') %>

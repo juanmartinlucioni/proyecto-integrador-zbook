@@ -7,6 +7,8 @@
 <body>
     <%- include('./partials/header') %>
     <main>  
+    <% if (results.length != 0){ %>
+        <h2 class="titulo">User Results</h2>
     <% if (results.length >= 4){ %>
     <div class="searchUsers uk-position-relative uk-visible-toggle uk-light" tabindex="-1"
     uk-slider="autoplay: true; autoplay-interval: 3000">
@@ -33,8 +35,9 @@
         uk-slider-item="next"></a>
     </div>
     <% } else { %>
+    <div class="presult">
         <% for (let i = 0; i < results.length; i++) { %>
-                 <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center post-min">
+                 <div class="tarjeta  uk-card uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center post-min">
                     <a href="/profile/<%= results[i].id%>" class="link-detalle">
                         <img id="pp" src="<%= results[i].profilePicture %>" alt="Foto de Perfil">
                         <h2><%= results[i].username %></h2> 
@@ -49,14 +52,23 @@
                  </div>
             <% } %>
     <% } %>
-    
-
-        <div class="searchPosts">
-            <ul>
-            
-            </ul>
+    <% } %>
+    </div>
+<% if (post.length != 0){ %>
+<h2 class="titulo">Post Results</h2>
+        <div class="explore">
+            <% for (let i = 0; i < post.length; i++) { %>
+                <a href="/post/<%= post[i].id%>"> 
+                <div class="post-search">
+                    <div class="overlay">
+                        <h3><%= post[i].textoPost %></h3> 
+                    </div> 
+                        <img src="<%= post[i].url %>" alt="">    
+                 </div>
+                 </a>
+            <% } %>
         </div>
-        
+<% } %>
     </main>
     <%- include('./partials/footer') %>
 </body>

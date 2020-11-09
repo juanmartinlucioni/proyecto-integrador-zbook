@@ -1,6 +1,7 @@
 const db = require('../config/database/database');
 const Posts = require('../config/database/models/Posts')
 const Usuarios = require('../config/database/models/Usuarios')
+const bcrypt = require('bcryptjs')
 const op = db.Sequelize.Op;
 const controller = {
     index: (req, res) => {
@@ -66,6 +67,49 @@ const controller = {
             }
         })
         return res.redirect('/profile')
+    },
+    password: (req, res) => {
+        if (req.session.user != undefined) {
+            Usuarios.findByPk(req.session.user.id)
+            .then((foundUser)=> {
+                return res.render('changePassword', {
+                title: "Change Profile",
+                details: foundUser,
+            });
+            })
+        } else {
+          return res.redirect('/login');
+        }
+    },
+    passwordChange: (req, res) => {
+        let formData = req.body
+        errores = []
+        if(req.session.user.answer == formData.answer) {
+            let newPass = formData.password
+            if (newPass.length < 6) {
+                errores.push("Password must be at least 6 characters long")
+                return res.render('passwordErrors', {
+                    title: "Error in Password Change",
+                    errores: errores
+                })
+            } else {
+                Usuarios.update({
+                    password: bcrypt.hashSync(newPass, 10)
+                },
+                {
+                    where: {
+                        id: req.session.user.id
+                    }
+                })
+                return res.redirect('/profile')
+            }
+        } else {
+            errores.push("Security questions answer does not match")
+            return res.render('passwordErrors', {
+                    title: "Error in Password Change",
+                    errores: errores
+                })
+        }
     }
 }
 

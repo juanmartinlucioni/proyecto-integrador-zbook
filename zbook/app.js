@@ -6,9 +6,8 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var logger = require('morgan');
 var Sequelize = require('sequelize');
-var Usuarios = require('./config/database/models/Usuarios')
 // Sequelize
-const db = require('./config/database/database')
+const db = require('./database/models')
 
 // Routers
 var indexRouter = require('./routes/index');
@@ -49,18 +48,18 @@ app.use(function(req,res,next){
 })
 
 // Cookies
-// app.use(function(req,res,next){
-//   if(req.cookies.userId != undefined && req.session.user == undefined){
-//     Usuarios.findByPK(req.cookies.userId)
-//     .then(function(user) {
-//       req.session.user = user;
-//       return next();
-//     })
-//     .catch(e=> console.log(e))
-//   } else {
-//     return next();
-//   }
-// })
+app.use(function(req,res,next){
+  if(req.cookies.userId != undefined && req.session.user == undefined){
+    db.usuarios.findByPk(req.cookies.userId)
+    .then(function(user) {
+      req.session.user = user;
+      return next();
+    })
+    .catch(e=> console.log(e))
+  } else {
+    return next();
+  }
+})
 
 // Llamada a Rutas
 app.use('/', indexRouter);
@@ -74,9 +73,9 @@ app.use('/search', searchRouter);
 app.use('/explore', exploreRouter)
 
 
-db.authenticate()
-  .then(() => console.log('Database connected...'))
-  .catch(err => console.log('Error: ' + err));
+// db.authenticate()
+//   .then(() => console.log('Database connected...'))
+//   .catch(err => console.log('Error: ' + err));
 
 
 // catch 404 and forward to error handler

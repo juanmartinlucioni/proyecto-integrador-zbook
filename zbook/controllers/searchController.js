@@ -1,7 +1,7 @@
-const db = require('../config/database/database');
+const db = require('../database/models');
 const op = db.Sequelize.Op;
-const Usuarios = require('../config/database/models/Usuarios')
-const Posts = require('../config/database/models/Posts')
+const Usuarios = db.usuarios
+const Posts = db.post
 const controller = {
     results: (req, res) => {
         if (req.session.user != undefined) {

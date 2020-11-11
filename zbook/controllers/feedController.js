@@ -1,18 +1,17 @@
-const db = require('../config/database/database');
-const Posts = require('../config/database/models/Posts');
-const Usuarios = require('../config/database/models/Usuarios');
-const Comments = require('../config/database/models/Comments');
+const db = require('../database/models');
+const Posts = db.post
+const Usuarios = db.usuarios
+const Comments = db.comments
 
 const controller = {
     index: (req, res) => {
         if (req.session.user == undefined) {
             res.redirect('/')
         } else {
-            Posts.findAll({
+            db.post.findAll({
                 include: [{
                     model: Usuarios,
-                    as: 'user',
-                    
+                    as: 'user', 
                 },
                 {
                     model: Comments,

@@ -1,4 +1,4 @@
-const db = require('../config/database/models/Usuarios')
+const db = require('../database/models')
 const bcrypt = require('bcryptjs');
 // const { removeTicks } = require('sequelize/types/lib/utils');
 let loginController = {
@@ -16,7 +16,7 @@ let loginController = {
             password: formData.psw,
         }
         console.log(user.password);
-        db.findOne({
+        db.usuarios.findOne({
           where:  [{username: user.username}]
         })
         .then((usuarioEncontrado) => {
@@ -38,7 +38,7 @@ let loginController = {
             }
           }
           else {
-            db.findOne({
+            db.usuarios.findOne({
               where: [{email:user.username}]
             })
             .then((mailEncontrado)=>{
@@ -71,6 +71,7 @@ let loginController = {
     },
   out: (req, res) => {
     req.session.destroy()
+    res.clearCookie('userId');
     return res.redirect('/')
   }
 };

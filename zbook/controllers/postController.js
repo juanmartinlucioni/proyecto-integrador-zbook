@@ -1,7 +1,9 @@
-const db = require('../config/database/database');
-const Posts = require('../config/database/models/Posts');
-const Usuarios = require('../config/database/models/Usuarios');
-const Comments = require('../config/database/models/Comments');
+const db = require('../database/models');
+const Posts = db.post;
+const Usuarios = db.usuarios;
+const Comments = db.comments
+// const Usuarios = require('../config/database/models/Usuarios');
+// const Comments = require('../config/database/models/Comments');
 const op = db.Sequelize.Op;
 let postController = {
     index: function (req, res) {

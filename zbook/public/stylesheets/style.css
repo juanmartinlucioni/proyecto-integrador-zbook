@@ -33,6 +33,19 @@ main{
 
 ul {
   list-style-type: none;
+  padding-left: 0;
+}
+
+.bottom-margin-15 {
+  margin-bottom: 15px;
+}
+
+.link-button a {
+  color: white;
+}
+
+.link-button a:hover {
+  text-decoration: none;
 }
 
 h1, h2, label {
@@ -56,12 +69,13 @@ h1, h2, label {
 label{
   padding: 5px;
 }
-input{
+input, select{
   text-align: center;
   border-width: 2px;
   border-radius: 15px;
   padding: 15px;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 #main-form{
@@ -90,6 +104,16 @@ input{
   justify-content: center;
   align-items: center;
 }
+
+.reg-errors {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
 /* search */
 .searchUsers{
  display: flex;
@@ -97,5 +121,110 @@ input{
 }
 #pp{ 
   border-radius: 50%;
+  height: 300px;
+  width: 300px;
+}
+.tarjeta:hover{
+  background-color:rgba(0, 136, 169, 0.8);
+}
+.explore{
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-bottom: 35px;
+}
+.post-explore{
+  margin: 15px;
+  width: 400px;
+  height: 400px;
+}
+.post-explore img{
+ display: block;
+ width:400px;
+ height:400px;
+ /* width: auto;
+ height: auto; */
 }
 
+.post-search {
+  margin: 15px;
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+
+.post-search img {
+  display: block;
+  width: 400px;
+  height: 400px;
+  /* width: auto;
+ height: auto; */
+}
+
+.overlay{
+  display: none;
+  z-index: 10;
+  background-color:rgba(0, 136, 169, 0.8);
+}
+
+.overlay h3 {
+  position: relative;
+  top: 45%;
+  margin: 0px;
+  text-align: center;
+  color: aliceblue;
+  text-transform: capitalize;
+}
+
+.post-search:hover .overlay {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color:rgba(0, 136, 169, 0.8);
+}
+
+.presult { 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+h2.titulo {
+ text-align: center;
+ padding-top: 40px;
+}
+
+.textopost {
+  text-transform: capitalize;
+}
+
+label.comment-label {
+  color: black !important;
+}
+
+.comment-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.comment-delete {
+  margin-left: auto
+}
+
+.comment-delete-button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.comment-delete-button:hover {
+  background: none;
+}

@@ -20,22 +20,21 @@ let loginController = {
           where:  [{username: user.username}]
         })
         .then((usuarioEncontrado) => {
+          errores = []
           if (usuarioEncontrado != null) {
-            console.log(bcrypt.hashSync(user.password, 10));
-            console.log(usuarioEncontrado.password);
             if (bcrypt.compareSync(user.password, usuarioEncontrado.password) == false){
-              console.log("alguien se olvido la contrasena user");
-            }
-            else if (bcrypt.compareSync(user.password, usuarioEncontrado.password)) {
-              console.log("bienvenido maquina!");
-              req.session.user= usuarioEncontrado;
-              // if(req.body.rememberme != undefined){
-              //   res.cookie('userId', user.id, {maxAge:20*1000})
-              // };
-              return res.redirect('/feed');
+              errores.push("Password didn't match")
+              return res.render('loginErrors', {
+                title: "Error in login",
+                errores: errores
+              })
             }
             else {
-              console.log("alguien se olvido la contrasena");
+              req.session.user= usuarioEncontrado;
+              if(req.body.rememberme != undefined){
+                res.cookie('userId', usuarioEncontrado.id, {maxAge:1*1000*60*60*2})
+              };
+              return res.redirect('/feed');
             }
           }
           else {
@@ -45,24 +44,30 @@ let loginController = {
             .then((mailEncontrado)=>{
               if (mailEncontrado != null){
                   if (bcrypt.compareSync(user.password, mailEncontrado.password)){
-                    console.log("que loco pa, te conectaste con el mail");
                     req.session.user= mailEncontrado;
-                    // if(req.body.rememberme != undefined){
-                    //   res.cookie('userId', user.id, {maxAge:20*1000})
-                    // };
+                    if(req.body.rememberme != undefined){
+                      res.cookie('userId', usuarioEncontrado.id, {maxAge:1*1000*60*60*2})
+                    };
+                    return res.redirect('/feed');
                   }
                   else {
-                    console.log("alguien se olvido la contrasena email");
+                    errores.push("Password didn't match")
+                    return res.render('loginErrors', {
+                      title: "Error in login",
+                      errores: errores
+                    })
                   }
                }
               else {
-                console.log('estas en el barrio equivocado, registrate ameo');
+                errores.push("User not found")
+                return res.render('loginErrors', {
+                  title: "Error in login",
+                  errores: errores
+                })
               }
             })
           }
         })
-    //      if(req.body.rememberme != undefined){
-    //      res.cookie('userId', user.id, {maxAge:20*1000})
     },
   out: (req, res) => {
     req.session.destroy()

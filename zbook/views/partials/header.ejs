@@ -13,12 +13,14 @@
              <nav>
                  <ul class='nav_links'>
                      <li><a href='/feed'>Home</a></li>
-                     <li><a href=''>Explore</a></li>
+                     <li><a href='/explore'>Explore</a></li>
                  </ul>
              </nav>
-             <a class='CTA' href='/profile/<%= user.id %>' >
-                 <button type='button' id='nav-button' class='login-button'>Profile</button>
-             </a>
+            
+             <a href="/profile/<%= locals.user.id %> ">
+                <button type='submit' id='nav-button' class='login-button'>Profile</button>
+            </a>
+                
             <form action="/login/out" method="POST">
              <button type='submit' id='nav-button' class='login-button'>Log Out</button>
             </form>

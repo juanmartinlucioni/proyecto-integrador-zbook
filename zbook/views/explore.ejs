@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/headlinks.ejs') %>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+    <main class="explore">
+        <% listaPosts.forEach(element => { %>
+                        <% idusuarioSearched = element.idusuario %>
+                        <% nombrePoster = element.user.username %>
+                        <% idPoster = element.idusuario %>
+                        <% profPic = element.user.profilePicture %>
+        <a href="/post/<%= element.id %>">
+        <div class="post-search">
+            <div class="overlay">
+                        <h3><%= element.textoPost %></h3> 
+            </div> 
+                <img src="<%= element.url %>" alt="">
+        </div>  
+        </a>           
+        <% }); %>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="full-body">
+
+<head>
+    <%- include('./partials/headlinks.ejs') %>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+    <main id="main-form">
+        <div class="uk-section uk-section-small">
+            <div class="uk-container uk-container-large uk-flex">
+                <form action="/profile/me/edit" method="POST">
+                    <h2>Edit Info</h2>
+                    <div class="form-information" id="edit-profile">
+                        <label for="user-email"><b>Email</b></label>
+                        <input type="text" value="<%= details.email %>" id="user-email" name="email">
+                        <label for="user-birthday"><b>Birthday</b></label>
+                        <input type="date" value="<%= details.birthday %>" id="user-birthday" name="birthday">
+                        <label for="user-picture"><b>Profile Picture</b></label>
+                        <select id="user-picture" name="profilepicture">
+                            <option value="1-pp">Juan Martin</option>
+                            <option value="2-pp">Jim</option>
+                            <option value="3-pp">Matías</option>
+                            <option value="4-pp">Madison</option>
+                            <option value="5-pp">Cristiano</option>
+                            <option value="6-pp">Pepson</option>
+                            <option value="7-pp">Boca</option>
+                            <option value="8-pp">Nicky</option>
+                            <option value="9-pp">Felicitas</option>
+                            <option value="10-pp">FakeHachi</option>
+                        </select>
+                        <button class="button full-width bottom-margin-15" type="submit">Update</button>
+                        <button class="button full-width link-button" type="button"><a href="/profile/me/password">Change Password</a></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" class="full-body">
+
+<head>
+    <%- include('./partials/headlinks.ejs') %>
+</head>
+
+<body>
+    <%- include('./partials/headernouser') %>
+    <main class="reg-errors">
+        <h1>There were some errors in your registration form:</h1>
+        <ul>
+            <% errores.forEach(element => { %>
+                <li class="errors"><%= element %></li>
+            <% }) %>
+        </ul>
+        <a href="/register">
+            <button>Back to Register</button>
+        </a>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
-const db = require('../config/database/database');
+const db = require('../database/models');
 const op = db.Sequelize.Op;
-const Usuarios = require('../config/database/models/Usuarios')
+const Usuarios = db.usuarios
 const bcrypt = require('bcryptjs')
 const controller = {
     index: (req, res) => {

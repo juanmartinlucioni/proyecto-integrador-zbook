@@ -45,7 +45,7 @@ CREATE TABLE `zbook`.`comments` (
   CONSTRAINT `post`
     FOREIGN KEY (`idpost`)
     REFERENCES `zbook`.`post` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION,
   CONSTRAINT `usuarios`
     FOREIGN KEY (`idusuario`)

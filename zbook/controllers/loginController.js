@@ -73,7 +73,69 @@ let loginController = {
     req.session.destroy()
     res.clearCookie('userId');
     return res.redirect('/')
-  }
+  },
+  forgotPassword: (req, res) => {
+    if (req.session.user != undefined) {
+      return res.redirect('/profile/me/password')
+    } else {
+      return res.render("forgotPassword", { title: "Forgot Password" });
+    }
+  },
+  passwordUpdate: (req, res) => {
+    let formData = req.body
+    userData = {
+      username: formData.username,
+      question: formData.question,
+      answer: formData.answer,
+      newPass: formData.password
+    }
+    errores = []
+    console.log(userData);
+    db.usuarios.findOne({
+          where:  [{username: userData.username}]
+        })
+        .then((usuarioEncontrado) => {
+          if (usuarioEncontrado == undefined) {
+            errores.push("User not found")
+            return res.render('passwordErrorsFP', {
+              title: "Error in Password Change",
+              errores: errores
+            })
+          } else {
+            if (usuarioEncontrado.securityQuestion != userData.question) {
+              errores.push("Question doesn't match")
+              return res.render('passwordErrorsFP', {
+                title: "Error in Password Change",
+                errores: errores
+              })
+            } else if(usuarioEncontrado.answer == userData.answer) {
+                if (userData.newPass.length < 6) {
+                  errores.push("Password must be at least 6 characters long")
+                  return res.render('passwordErrorsFP', {
+                    title: "Error in Password Change",
+                    errores: errores
+                  })
+                } else {
+                  db.usuarios.update({
+                    password: bcrypt.hashSync(userData.newPass, 10)
+                    },
+                    {
+                      where: {
+                        id: usuarioEncontrado.id
+                      }
+                    })
+                    return res.redirect('/login')
+                  }
+            } else {
+              errores.push("Answer does not match")
+              return res.render('passwordErrorsFP', {
+                title: "Error in Password Change",
+                errores: errores
+              })
+            }
+          }
+        })
+    }
 };
 
 module.exports = loginController;

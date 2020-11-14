@@ -12,7 +12,6 @@ const db = require('./database/models')
 // Routers
 var indexRouter = require('./routes/index');
 var feedRouter = require('./routes/feed');
-// var usersRouter = require('./routes/users');
 var profileRouter = require('./routes/profile');
 var registerRouter = require('./routes/register');
 var loginRouter = require('./routes/login');

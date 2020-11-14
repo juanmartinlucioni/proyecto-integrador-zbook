@@ -1,6 +1,7 @@
 const db = require('../database/models');
 const Posts = db.post
 const Usuarios = db.usuarios
+const Comments = db.comments
 const bcrypt = require('bcryptjs')
 const op = db.Sequelize.Op;
 const controller = {
@@ -14,11 +15,17 @@ const controller = {
     id: (req, res) => {
         let idProfile = req.params.id;
         Usuarios.findByPk(idProfile, {
-            include: {
+            include: [{
                 model: Posts,
                 as: 'posts',
+                order: [[{Posts},'fechaCreacion','DESC']]
             },
-            order: [[{Posts},'fechaCreacion','DESC']]
+            {
+                model: Comments,
+                as: 'comments',
+                order: [[{Comments},'fechaCreacion','DESC']]
+            }
+            ]
         })
         .then((foundUser)=> {
             if (foundUser == undefined) {
@@ -31,6 +38,7 @@ const controller = {
                         title: "Profile",
                         details: foundUser,
                         post: foundUser.posts,
+                        comments: foundUser.comments
                     }
             )}
         })

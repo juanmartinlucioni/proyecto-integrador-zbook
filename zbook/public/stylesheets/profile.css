@@ -45,6 +45,12 @@ section.info-usuario h3 {
     padding: 0;
 }
 
+h1.no-posts {
+    margin: 0 auto;
+    color: black !important;
+    padding-bottom: 10px;
+}
+
 p.post-desc {
     color: black;    
 }

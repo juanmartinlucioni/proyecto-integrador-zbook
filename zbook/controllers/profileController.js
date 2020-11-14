@@ -104,7 +104,7 @@ const controller = {
                 return res.redirect('/profile')
             }
         } else {
-            errores.push("Security questions answer does not match")
+            errores.push("Answer does not match")
             return res.render('passwordErrors', {
                     title: "Error in Password Change",
                     errores: errores

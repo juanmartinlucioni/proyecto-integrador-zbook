@@ -45,10 +45,21 @@ section.info-usuario h3 {
     padding: 0;
 }
 
+h2.posts-header {
+    width: 100%;
+    margin: 0 auto;
+    color: black !important;
+    padding-bottom: 10px;
+}
+
 p.post-desc {
     color: black;    
 }
 
 link-detalle:hover * {
     text-decoration: none;
+}
+
+.posts-container {
+    border-bottom: 1px solid #1967A3;
 }

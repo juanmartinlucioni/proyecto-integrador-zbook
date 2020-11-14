@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" <%if (post.length < 4) { %>
+<html lang="en" <%if ((post.length == 0 && comments.length != 0) || (((post.length == 0) || (post.length < 4)) && comments.length == 0) || (post.length == 0 && comments.length == 0)) { %>
     class="full-body"
 <% } %> >
 <head>
@@ -32,15 +32,19 @@
                         <div class="red-usuario-container">
                             <ul class="red-usuario uk-flex uk-flex-between">
                                 <li><%= post.length %> posts</li>
-                                <li>200 seguidores</li>
-                                <li>300 seguidos</li>
+                                <li><%= comments.length %> comments</li>
                             </ul>
                         </div>
                     </div>
                     
                </section>
-               <section class="muro uk-flex uk-flex-middle uk-flex-center">
+               <section class="muro uk-flex uk-flex-middle uk-flex-center posts-container">
                     <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
+                        <% if(post.length == 0) { %>
+                            <h2 class="posts-header">No posts yet</h2>
+                        <% } else { %>
+                            <h2 class="posts-header">Posts</h2>
+                        <% } %>
                         <% for (let i = 0; i < post.length; i++) { %>
                             <div
                                 class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center post-min">
@@ -49,12 +53,25 @@
                                     <p class="textopost uk-text-center post-desc"><%= post[i].textoPost %></p>
                                 </a>
                             </div>
-                        <% } %>
-                    
-                      
-                        
+                        <% } %>    
                     </div>
-               </section>
+                </section>
+                <section class="muro uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
+                        <% if(comments.length == 0) { %>
+                        <h2 class="posts-header">No comments yet</h2>
+                        <% } else { %>
+                            <h2 class="posts-header">Comments</h2>
+                        <% } %>
+                        <% for (let i = 0; i < comments.length; i++) { %>
+                        <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center post-min">
+                            <a href="/post/<%= comments[i].idpost%>" class="link-detalle">
+                                <p class="textopost uk-text-center post-desc"><%= comments[i].texto %></p>
+                            </a>
+                        </div>
+                        <% } %>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
